@@ -1,33 +1,56 @@
 # How to add a listing
 
-All property cards on the site come from one file: **`listings.json`**. You edit that
-file, save it, and the site updates. You never have to touch `index.html`.
+There are two ways. **Use the first one.** The second is there for when you want
+fine control, or something needs fixing by hand.
 
 ---
 
-## The short version
+## The easy way: fill in a form
 
-1. Upload your photos to the **`images`** folder.
-2. Open **`listings.json`** and add a block for the new property.
-3. Commit. Done.
+1. Go to the repo's **Issues** tab → **New issue** → **New listing** → **Get started**.
+2. Fill in the address, city, price, and status. Everything else is optional.
+3. Drag your photos into the Photos box — or tap it and pick them from your phone.
+4. Click **Submit new issue**.
+
+About a minute later a bot replies on the issue confirming the listing is live, and
+the site updates itself.
+
+**The first photo becomes the card image. The rest become the photo strip** further
+down the properties section. Photos are resized and converted automatically, so upload
+them straight from your phone at full size — no need to shrink anything.
+
+### Changing or removing a listing
+
+The issue *is* the listing. It stays open as its record.
+
+- **Change something** — price drop, status change, better photos: **edit the issue**
+  and save. The site updates again.
+- **Take it off the site**: **close the issue**. Its photos get cleaned up too.
+- **Put it back**: reopen the issue.
+
+You never need to touch `listings.json` for any of this.
+
+### If something goes wrong
+
+The bot comments on the issue with what happened. If a photo fails to convert (iPhone
+HEIC files sometimes do), it tells you which one and publishes the rest — re-upload
+that photo as a JPEG and it'll pick it up.
+
+Only you (and anyone you add as a repo collaborator) can publish this way. Issues
+opened by anyone else are ignored.
 
 ---
 
-## Step 1 — Upload the photos
+## The manual way: edit `listings.json`
 
-On GitHub, open the **`images`** folder → **Add file** → **Upload files** → drag your
-photos in → **Commit changes**.
+Everything on the properties section comes from `listings.json`. You can edit it
+directly on GitHub with the pencil icon — useful for reordering listings, adding photo
+captions, or fixing a typo without going through the form.
 
-Name files in lowercase with dashes, no spaces, e.g.
-`412-oak-street-exterior.jpg`. Photos around 1200–1600 px wide are plenty — the cards
-are cropped to a 4:3 shape, so a normal landscape photo works well.
+Photos live in the `images` folder. Upload with **Add file → Upload files**, and name
+them lowercase-with-dashes: `412-oak-street-1.webp`.
 
-## Step 2 — Add the listing
-
-Open **`listings.json`** on GitHub and click the pencil icon to edit it.
-
-Copy this block and paste it inside the square brackets, right after the `[` so the new
-listing shows up first. **Every listing block ends with a comma except the last one.**
+A listing looks like this:
 
 ```json
     {
@@ -37,83 +60,63 @@ listing shows up first. **Every listing block ends with a comma except the last 
       "badge": "Blossomwood",
       "status": "For Sale",
       "specs": ["4 Beds", "3 Baths", "2,240 Sq Ft"],
-      "url": "https://www.realtor.com/PASTE-THE-REAL-LISTING-LINK-HERE",
-      "photo": "images/412-oak-street-exterior.jpg",
+      "url": "https://www.realtor.com/PASTE-REAL-LINK-HERE",
+      "photo": "images/412-oak-street-1.webp",
       "alt": "412 Oak Street, Huntsville, AL — front exterior"
     },
 ```
 
-Change the values between the quotation marks to match the property. Then scroll to the
-bottom, write a short note like "Add 412 Oak Street", and click **Commit changes**.
-
-The site picks it up within a minute or two.
-
----
-
-## What each field means
+### What each field means
 
 | Field | Required? | What it does |
 |---|---|---|
-| `price` | yes | Big number on the card. Type it exactly as you want it shown, including the `$` and commas. |
-| `address` | yes | Street line. |
+| `price` | yes | Big number on the card. Typed exactly as shown, including `$` and commas. |
+| `address` | yes | Street line. Also how the form matches an edit to an existing listing. |
 | `city` | yes | Grey line under the address. |
-| `specs` | yes | The row of details at the bottom. Any number of items — `["3 Beds", "2 Baths", "1,840 Sq Ft"]` or `["Commercial", "6,400 Sq Ft"]`. |
-| `status` | optional | Black tag, top right — `For Sale`, `Under Contract`, `Sold`, `Coming Soon`. Leave it out and no tag shows. |
-| `badge` | optional | White tag, top left. Good for a neighborhood name. |
-| `url` | optional | Where the card links when clicked — the realtor.com listing, usually. Opens in a new tab. |
-| `photo` | optional | Path to the main photo, e.g. `images/412-oak-street-exterior.jpg`. |
-| `alt` | optional | Description of the photo for screen readers and for when an image fails to load. |
-| `art` | optional | Used **only when there's no photo**. Draws a line sketch instead: `"house"`, `"building"`, or `"land"`. |
-| `demo` | optional | `true` marks it as a placeholder — badge reads "Demo listing" and the card doesn't link anywhere. Delete this line once it's a real listing. |
-| `gallery` | optional | The extra photo strip below the grid. See below. |
+| `specs` | yes | The row of details at the bottom. Any number of items. |
+| `status` | optional | Black tag, top right — `For Sale`, `Under Contract`, `Sold`, `Coming Soon`. |
+| `badge` | optional | White tag, top left. Usually the neighborhood. |
+| `url` | optional | Where the card links. Must start with `http://` or `https://`, or it's ignored. |
+| `photo` | optional | Path to the card photo, e.g. `images/412-oak-street-1.webp`. |
+| `alt` | optional | Describes the photo for screen readers and when an image won't load. |
+| `art` | optional | Used **only when there's no photo**: `"house"`, `"building"`, or `"land"`. |
+| `demo` | optional | `true` marks it a placeholder — badge reads "Demo listing", card doesn't link. |
+| `gallery` | optional | The photo strip below the grid. See below. |
 
-## The photo strip (`gallery`)
-
-To show extra photos of a property underneath the card grid, add a `gallery` to that
-listing:
+### The photo strip (`gallery`)
 
 ```json
       "gallery": {
         "title": "More views — 412 Oak Street",
         "subtitle": "Kitchen, primary suite, backyard",
         "photos": [
-          { "photo": "images/412-oak-kitchen.jpg", "caption": "Kitchen", "alt": "412 Oak Street — kitchen" },
-          { "photo": "images/412-oak-primary.jpg", "caption": "Primary Suite", "alt": "412 Oak Street — primary bedroom" },
-          { "photo": "images/412-oak-yard.jpg", "caption": "Backyard", "alt": "412 Oak Street — backyard" }
+          { "photo": "images/412-oak-2.webp", "caption": "Kitchen", "alt": "412 Oak Street — kitchen" },
+          { "photo": "images/412-oak-3.webp", "caption": "Primary Suite", "alt": "412 Oak Street — primary bedroom" }
         ]
       }
 ```
 
-Any number of photos works — the strip adjusts. If a listing has a `gallery` **and**
-other fields after it, remember the comma rules below.
+Any number of photos works — the strip adjusts. The form doesn't set `caption` or
+`subtitle`, so add those here if you want them.
+
+### Three rules that prevent most mistakes
+
+1. **Text goes in double quotes.** `"price": "$289,900"`.
+2. **Commas between items, never after the last one.**
+3. **Don't delete the outer brackets** — the file starts `{ "listings": [` and ends `] }`.
+
+If the page says listings couldn't be loaded, there's a typo. Paste the file into
+<https://jsonlint.com> and it points at the line.
 
 ---
 
-## Removing or changing a listing
+## Two notes about the site itself
 
-- **Change a price or status:** edit the text between the quotation marks. That's it.
-- **Remove a listing:** delete the whole block from `{` to `}`, plus its trailing comma.
-- **Mark something sold:** change `"status": "For Sale"` to `"status": "Sold"`.
+**Previewing locally.** Opening `index.html` by double-clicking it shows "Listings
+couldn't be loaded" — browsers block reading `listings.json` from a plain file path.
+That's expected, not a broken site. View it through GitHub Pages instead.
 
----
-
-## Three rules that prevent 99% of mistakes
-
-1. **Text goes in double quotes.** `"price": "$289,900"` — not `'$289,900'`, not
-   `$289,900`.
-2. **Commas between items, never after the last one.** Between two listing blocks:
-   `},` then `{`. After the final `}` in the list: no comma.
-3. **Don't delete the outer brackets** — the file must still start with
-   `{ "listings": [` and end with `] }`.
-
-If the page shows "Listings couldn't be loaded", the JSON has a typo. Paste the file
-into <https://jsonlint.com> and it will point at the line.
-
----
-
-## A note on previewing
-
-Opening `index.html` by double-clicking it on your computer will show the "Listings
-couldn't be loaded" message — browsers block reading `listings.json` from a plain file
-path for security reasons. That's expected and does **not** mean the site is broken.
-View the site through GitHub Pages (or any web server) to see it properly.
+**Publishing.** GitHub Pages isn't switched on yet. Turn it on under
+**Settings → Pages → Source: Deploy from a branch → main / (root)**. On a free GitHub
+account the repo has to be public for Pages to work; keeping it private requires
+GitHub Pro. Either way the publishing form keeps working — strangers can't use it.

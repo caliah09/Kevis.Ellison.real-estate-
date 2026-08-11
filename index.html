@@ -141,6 +141,11 @@ img { max-width: 100%; display: block; }
 .nav-brand-tag {
   font-family: var(--font-ui); font-size: 0.62rem; letter-spacing: 0.18em;
   text-transform: uppercase; color: var(--muted); margin-top: 2px;
+  white-space: nowrap;
+}
+/* the brokerage line is long — tighten it before it can collide with the menu button */
+@media (max-width: 420px) {
+  .nav-brand-tag { font-size: 0.56rem; letter-spacing: 0.1em; }
 }
 .nav-links { display: none; gap: 34px; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
@@ -419,7 +424,7 @@ img { max-width: 100%; display: block; }
 <nav class="nav" id="nav">
   <a class="nav-brand" href="#top">
     <span class="nav-brand-name">Kevis Ellison</span>
-    <span class="nav-brand-tag">Realtor · North Alabama</span>
+    <span class="nav-brand-tag">Realtor® · Linda Blue Real Estate</span>
   </a>
   <ul class="nav-links">
     <li><a href="#top">Home</a></li>
@@ -819,9 +824,15 @@ img { max-width: 100%; display: block; }
     return img;
   }
 
+  // Only ever link out over http(s), so a stray "javascript:" in the data is inert.
+  function safeUrl(value) {
+    var trimmed = typeof value === "string" ? value.trim() : "";
+    return /^https?:\/\//i.test(trimmed) ? trimmed : "";
+  }
+
   function buildCard(item) {
     var isDemo = item.demo === true;
-    var href = (!isDemo && item.url) ? item.url : "#";
+    var href = (!isDemo && safeUrl(item.url)) || "#";
 
     var card = el("a", "prop-card reveal");
     card.href = href;

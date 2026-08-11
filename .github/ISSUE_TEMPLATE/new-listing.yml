@@ -1,0 +1,113 @@
+name: New listing
+description: Add a property to the website (or edit this issue later to update it)
+title: "Listing: "
+labels: ["listing"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this in and click **Submit new issue**. The site updates itself in about a minute.
+
+        - Anything marked *optional* can be left blank.
+        - **To change a listing later**, edit this issue — the site updates again.
+        - **To take a listing off the site**, close this issue.
+
+  - type: input
+    id: address
+    attributes:
+      label: Street address
+      placeholder: 412 Oak Street
+    validations:
+      required: true
+
+  - type: input
+    id: city
+    attributes:
+      label: City and state
+      placeholder: Huntsville, AL
+    validations:
+      required: true
+
+  - type: input
+    id: price
+    attributes:
+      label: Price
+      description: Just the number is fine — it gets formatted for you.
+      placeholder: 289900
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Property type
+      options:
+        - Residential
+        - Commercial
+        - Land
+      default: 0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - For Sale
+        - Coming Soon
+        - Under Contract
+        - Pending
+        - Sold
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: beds
+    attributes:
+      label: Bedrooms (optional)
+      placeholder: "4"
+
+  - type: input
+    id: baths
+    attributes:
+      label: Bathrooms (optional)
+      placeholder: "2.5"
+
+  - type: input
+    id: sqft
+    attributes:
+      label: Square feet (optional)
+      placeholder: "2240"
+
+  - type: input
+    id: lot
+    attributes:
+      label: Lot size (optional)
+      description: Mainly for land listings. Type it how you want it shown.
+      placeholder: 4.2 Acres
+
+  - type: input
+    id: neighborhood
+    attributes:
+      label: Neighborhood or subdivision (optional)
+      description: Shows as the small white tag on the corner of the photo.
+      placeholder: Blossomwood
+
+  - type: input
+    id: link
+    attributes:
+      label: Listing link (optional)
+      description: Where the card should go when someone clicks it — usually the realtor.com page.
+      placeholder: https://www.realtor.com/realestateandhomes-detail/...
+
+  - type: textarea
+    id: photos
+    attributes:
+      label: Photos (optional)
+      description: |
+        Drag photos straight into this box, or tap it and pick them from your phone.
+        **The first photo becomes the card image**; the rest become the photo strip lower down the page.
+        They get resized and optimized automatically — no need to shrink them first.
+      placeholder: Drop photos here
