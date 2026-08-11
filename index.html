@@ -288,6 +288,49 @@
         <a class="btn btn-fill" href="tel:+12563454901">Call (256) 345-4901</a>
         <a class="btn btn-ghost" href="mailto:kevisellison84@gmail.com">Email Kevis</a>
       </div>
+
+      <!-- Posts to Formspree. Without JavaScript this submits normally and lands
+           on Formspree's own confirmation page, so the form still works. -->
+      <form class="contact-form" id="contact-form" method="POST"
+            action="https://formspree.io/f/xqpzqdze">
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Name</span>
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span class="field-label">Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Phone <span class="field-opt">(optional)</span></span>
+            <input type="tel" name="phone" autocomplete="tel">
+          </label>
+          <label class="field">
+            <span class="field-label">I'm interested in</span>
+            <select name="interest">
+              <option>Buying</option>
+              <option>Selling</option>
+              <option>Commercial</option>
+              <option>Something else</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span class="field-label">Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="New message from your website">
+        <!-- Spam trap: hidden from people, tempting to bots. -->
+        <input class="form-trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button class="btn btn-fill form-submit" type="submit">Send message</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <p class="form-note">Prefer to talk? Call <a href="tel:+12563454901">(256) 345-4901</a>.</p>
+      </form>
     </div>
   </section>
 
@@ -546,6 +589,46 @@
         // Leave the section hidden — better a shorter page than an empty one.
         if (window.console) { console.error("testimonials.json failed to load:", err); }
       });
+  }
+
+  /* ============ CONTACT FORM ============ */
+
+  // Submit in the background so the visitor stays on the page. Without this the
+  // form still posts normally and lands on Formspree's confirmation page.
+  var form = document.getElementById("contact-form");
+  var formStatus = document.getElementById("form-status");
+
+  if (form && formStatus && window.fetch && window.FormData) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var button = form.querySelector("[type=submit]");
+
+      formStatus.className = "form-status";
+      formStatus.textContent = "Sending\u2026";
+      button.disabled = true;
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            formStatus.textContent = "Thanks — your message is on its way. Kevis will get back to you shortly.";
+            return;
+          }
+          return res.json().then(function (data) {
+            throw new Error((data.errors || []).map(function (e) { return e.message; }).join(", ") || "HTTP " + res.status);
+          });
+        })
+        .catch(function (err) {
+          formStatus.className = "form-status is-error";
+          formStatus.textContent = "That didn't go through. Please call (256) 345-4901 or email kevisellison84@gmail.com.";
+          if (window.console) { console.error("contact form:", err); }
+        })
+        .then(function () { button.disabled = false; });
+    });
   }
 })();
 </script>
