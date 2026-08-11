@@ -164,9 +164,9 @@ client for a line by text works too.
 
 ## Two notes about the site itself
 
-**Previewing locally.** Opening `index.html` by double-clicking it shows "Listings
-couldn't be loaded" — browsers block reading `listings.json` from a plain file path.
-That's expected, not a broken site. View it through GitHub Pages instead.
+**Previewing locally.** Opening `index.html` by double-clicking it shows "The listings
+couldn't be loaded just now" — browsers block reading `listings.json` from a plain file
+path. That's expected, not a broken site. View the live site instead.
 
 **Publishing.** GitHub Pages isn't switched on yet. Turn it on under
 **Settings → Pages → Source: Deploy from a branch → main / (root)**. On a free GitHub

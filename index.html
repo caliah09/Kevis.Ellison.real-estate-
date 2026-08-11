@@ -108,7 +108,15 @@
 
       <!-- Cards are rendered from listings.json — see LISTINGS.md to add a listing. -->
       <div class="props-grid" id="props-grid"></div>
-      <p class="props-note" id="props-note">Loading listings&hellip;</p>
+      <!-- Empty and hidden on purpose: the cards arrive fast enough that a
+           "Loading…" line only ever flashes. This fills in if the fetch fails
+           or there are no listings to show. -->
+      <p class="props-note" id="props-note" hidden></p>
+      <noscript>
+        <p class="props-note">Listings need JavaScript to display. Call
+          <a href="tel:+12563454901">(256) 345-4901</a> and Kevis will walk you through
+          what's currently available.</p>
+      </noscript>
 
       <div id="props-spotlights"></div>
     </div>
@@ -546,8 +554,8 @@
       .then(render)
       .catch(function (err) {
         note.hidden = false;
-        note.textContent = "Listings couldn't be loaded. If you opened this page straight from your computer, "
-          + "view it through GitHub Pages or a local web server instead.";
+        note.textContent = "The listings couldn't be loaded just now. Call (256) 345-4901 and Kevis "
+          + "will tell you what's currently available.";
         if (window.console) { console.error("listings.json failed to load:", err); }
       });
   }
