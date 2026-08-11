@@ -114,13 +114,16 @@ If the page says listings couldn't be loaded, there's a typo. Paste the file int
 
 The About section shows a "KE" monogram until a photo is there. To replace it:
 
-1. On your computer, rename the photo to exactly **`kevis-ellison.jpg`** — lowercase,
-   with the dash, ending in `.jpg`.
-2. On GitHub, open the **`images`** folder → **Add file** → **Upload files** → drag it
+1. Get the photo out of the Photos app if that's where it lives: select it, then
+   **File → Export → Export 1 Photo…**, set Photo Kind to **JPEG**, and save it to your
+   Desktop. (Photos has no filenames of its own, so you can't rename it in there.)
+2. In Finder, click the file once, press **Return**, and name it **`kevis-ellison`**.
+   Leave whatever extension it already has — `.jpg`, `.jpeg`, `.png` and `.JPG` all work.
+3. On GitHub, open the **`images`** folder → **Add file** → **Upload files** → drag it
    in → **Commit changes**.
 
-That's it. No code change — the page looks for that exact filename and uses it the
-moment it exists. Remove the file and the monogram comes back.
+That's it. No code change — the page looks for that name and uses it the moment it
+exists. Remove the file and the monogram comes back.
 
 A portrait-shaped photo works best, since the space is taller than it is wide. The
 image is cropped from the center outward and anchored to the top, so your head stays
