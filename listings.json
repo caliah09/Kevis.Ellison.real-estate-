@@ -1,12 +1,56 @@
 {
   "listings": [
     {
+      "price": "$259,000",
+      "address": "2716 Lexington Ave SW",
+      "city": "Decatur, AL",
+      "status": "Contingent",
+      "specs": [
+        "3 Beds",
+        "2 Baths",
+        "1,687 Sq Ft"
+      ],
+      "url": "https://www.realtor.com/realestateandhomes-detail/2716-Lexington-Ave-SW_Decatur_AL_35603_M78844-73094",
+      "photo": "images/2716-lexington-ave-sw-1-exterior.webp",
+      "alt": "2716 Lexington Ave SW, Decatur, AL — front exterior",
+      "gallery": {
+        "title": "More views — 2716 Lexington Ave SW",
+        "subtitle": "Kitchen, living room, primary bedroom, bath",
+        "photos": [
+          {
+            "photo": "images/2716-lexington-ave-sw-2-kitchen.webp",
+            "caption": "Kitchen",
+            "alt": "2716 Lexington Ave SW — kitchen with white cabinetry and stainless appliances"
+          },
+          {
+            "photo": "images/2716-lexington-ave-sw-3-living.webp",
+            "caption": "Living Room",
+            "alt": "2716 Lexington Ave SW — living room with brick fireplace and French doors"
+          },
+          {
+            "photo": "images/2716-lexington-ave-sw-4-bedroom.webp",
+            "caption": "Primary Bedroom",
+            "alt": "2716 Lexington Ave SW — primary bedroom with en-suite access"
+          },
+          {
+            "photo": "images/2716-lexington-ave-sw-5-bath.webp",
+            "caption": "Bath",
+            "alt": "2716 Lexington Ave SW — full bath with vanity"
+          }
+        ]
+      }
+    },
+    {
       "price": "$235,500",
       "address": "1511 10th Ave SE",
       "city": "Decatur, AL",
       "badge": "Buena Vista Estates",
       "status": "For Sale",
-      "specs": ["3 Beds", "2 Baths", "1,840 Sq Ft"],
+      "specs": [
+        "3 Beds",
+        "2 Baths",
+        "1,840 Sq Ft"
+      ],
       "url": "https://www.realtor.com/realestateandhomes-detail/1511-10th-Ave-SE_Decatur_AL_35601_M75319-74544",
       "photo": "images/1511-10th-ave-se-exterior.webp",
       "alt": "1511 10th Ave SE, Decatur, AL — front exterior",
@@ -31,24 +75,6 @@
           }
         ]
       }
-    },
-    {
-      "demo": true,
-      "price": "$362,500",
-      "address": "456 Example Avenue",
-      "city": "Madison, AL",
-      "status": "Under Contract",
-      "specs": ["3 Beds", "2 Baths", "2,120 Sq Ft"],
-      "art": "house"
-    },
-    {
-      "demo": true,
-      "price": "$1,150,000",
-      "address": "789 Example Boulevard",
-      "city": "Huntsville, AL",
-      "status": "For Sale",
-      "specs": ["Commercial", "6,400 Sq Ft"],
-      "art": "building"
     }
   ]
 }
