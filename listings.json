@@ -1,6 +1,36 @@
 {
   "listings": [
     {
+      "price": "$105,000",
+      "address": "223 SW 11th Ave",
+      "city": "Decatur, AL",
+      "status": "For Sale",
+      "specs": [
+        "2 Beds",
+        "1 Bath",
+        "950 Sq Ft"
+      ],
+      "url": "https://www.valleymls.com/homes-for-sale/223-SW-11th-Avenue-Decatur-AL-35601-435607623",
+      "photo": "images/223-sw-11th-ave-1-exterior.webp",
+      "alt": "223 SW 11th Ave, Decatur, AL — front exterior",
+      "gallery": {
+        "title": "More views — 223 SW 11th Ave",
+        "subtitle": "Carport and side yard",
+        "photos": [
+          {
+            "photo": "images/223-sw-11th-ave-2-carport.webp",
+            "caption": "Carport",
+            "alt": "223 SW 11th Ave — covered carport and driveway"
+          },
+          {
+            "photo": "images/223-sw-11th-ave-3-side.webp",
+            "caption": "Side Yard",
+            "alt": "223 SW 11th Ave — side elevation and yard"
+          }
+        ]
+      }
+    },
+    {
       "price": "$259,000",
       "address": "2716 Lexington Ave SW",
       "city": "Decatur, AL",
