@@ -168,7 +168,6 @@ client for a line by text works too.
 couldn't be loaded just now" — browsers block reading `listings.json` from a plain file
 path. That's expected, not a broken site. View the live site instead.
 
-**Publishing.** GitHub Pages isn't switched on yet. Turn it on under
-**Settings → Pages → Source: Deploy from a branch → main / (root)**. On a free GitHub
-account the repo has to be public for Pages to work; keeping it private requires
-GitHub Pro. Either way the publishing form keeps working — strangers can't use it.
+**Publishing.** The site is live on GitHub Pages, built from `main`. Every commit —
+including the ones the listing bot makes — redeploys it within a minute or two. You
+never have to publish anything by hand.
