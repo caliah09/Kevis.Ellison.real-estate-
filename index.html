@@ -157,8 +157,30 @@ img { max-width: 100%; display: block; }
   background: currentColor; transition: right .25s ease;
 }
 .nav-links a:hover::after { right: 0; }
-.nav-right { display: flex; align-items: center; gap: 22px; }
+.nav-right { display: flex; align-items: center; gap: 14px; }
 .nav .btn { padding: 11px 22px; font-size: 0.76rem; display: none; }
+/* Click-to-call, pinned in the nav at every width. The number used to live only
+   in the footer, 15,000px down a phone screen. */
+.nav-call {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-ui); font-size: 0.76rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+  text-decoration: none; padding: 9px 13px; border: 1.5px solid currentColor;
+  transition: background-color .2s ease, color .2s ease;
+}
+.nav-call svg { width: 15px; height: 15px; flex: none; }
+.nav-call:hover { background: var(--ink); color: var(--paper); }
+.nav-call-text { display: none; }
+/* Icon-only below 560px, where the full number won't fit beside the brand.
+   Sized to stay a comfortable thumb target. */
+@media (max-width: 559px) {
+  .nav-call { min-height: 44px; min-width: 44px; justify-content: center; padding: 9px; }
+}
+@media (min-width: 560px) { .nav-call-text { display: inline; } }
+/* Below this the brokerage line and the call button fight for the same room;
+   the brokerage still appears in About and the footer. */
+@media (max-width: 379px) { .nav-brand-tag { display: none; } }
+@media (min-width: 860px) { .nav-right { gap: 22px; } }
 .nav-toggle {
   display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
   width: 26px; height: 20px;
@@ -416,7 +438,7 @@ img { max-width: 100%; display: block; }
 /* ============ FOOTER ============ */
 .footer { padding: 70px 0 34px; }
 .footer-grid { display: grid; grid-template-columns: 1fr; gap: 44px; }
-@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.3fr 1fr 1fr; } }
+@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.3fr 1fr; } }
 .footer-brand-name { font-family: var(--font-display); font-size: 1.5rem; }
 .footer-brand-title { margin-top: 6px; font-size: 0.85rem; color: var(--muted); }
 .footer-contact { margin-top: 22px; display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem; }
@@ -457,6 +479,10 @@ img { max-width: 100%; display: block; }
     <li><a href="#about">About</a></li>
   </ul>
   <div class="nav-right">
+    <a class="nav-call" href="tel:+12563454901" aria-label="Call Kevis Ellison at 2 5 6, 3 4 5, 4 9 0 1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+      <span class="nav-call-text">(256) 345-4901</span>
+    </a>
     <a class="btn btn-fill" href="#contact">Contact</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span>
@@ -471,6 +497,7 @@ img { max-width: 100%; display: block; }
   <a href="#sell">Sell</a>
   <a href="#commercial">Commercial</a>
   <a href="#about">About</a>
+  <a href="tel:+12563454901">Call (256) 345-4901</a>
   <a class="btn btn-fill" href="#contact">Contact</a>
 </div>
 
@@ -484,7 +511,7 @@ img { max-width: 100%; display: block; }
       <p class="hero-sub">Residential and commercial real estate across North Alabama — for buyers, sellers, and everyone deciding what's next.</p>
       <div class="hero-actions">
         <a class="btn btn-fill" href="#properties">View Properties</a>
-        <a class="btn btn-ghost" href="#contact">Let's Talk</a>
+        <a class="btn btn-ghost" href="tel:+12563454901">Call (256) 345-4901</a>
       </div>
       <div class="hero-meta">
         <span>Morgan County</span>
@@ -534,9 +561,8 @@ img { max-width: 100%; display: block; }
       <div class="props-head reveal">
         <div>
           <span class="eyebrow">Featured Listings</span>
-          <h2>Currently available.</h2>
+          <h2>Featured properties.</h2>
         </div>
-        <a class="btn btn-ghost" href="#">View All Properties</a>
       </div>
 
       <!-- Cards are rendered from listings.json — see LISTINGS.md to add a listing. -->
@@ -714,8 +740,8 @@ img { max-width: 100%; display: block; }
       <h2>Your next move starts here.</h2>
       <p>Whether you're buying, selling, or exploring your next opportunity, let's talk.</p>
       <div class="final-actions">
-        <a class="btn btn-fill" href="mailto:kevisellison84@gmail.com">Contact Kevis</a>
-        <a class="btn btn-ghost" href="#properties">View Properties</a>
+        <a class="btn btn-fill" href="tel:+12563454901">Call (256) 345-4901</a>
+        <a class="btn btn-ghost" href="mailto:kevisellison84@gmail.com">Email Kevis</a>
       </div>
     </div>
   </section>
@@ -745,13 +771,6 @@ img { max-width: 100%; display: block; }
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div>
-        <div class="footer-head">Connect</div>
-        <ul class="footer-links">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-        </ul>
-      </div>
     </div>
 
     <div class="footer-bottom">
@@ -760,9 +779,6 @@ img { max-width: 100%; display: block; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 11 L12 4 L21 11"/><path d="M5 10 L5 20 L19 20 L19 10"/><path d="M10 20 L10 14 L14 14 L14 20"/></svg>
         Equal Housing Opportunity
       </span>
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Brokerage Disclosures</a>
     </div>
   </div>
 </footer>
