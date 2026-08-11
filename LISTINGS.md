@@ -110,6 +110,25 @@ If the page says listings couldn't be loaded, there's a typo. Paste the file int
 
 ---
 
+## Your headshot
+
+The About section shows a "KE" monogram until a photo is there. To replace it:
+
+1. On your computer, rename the photo to exactly **`kevis-ellison.jpg`** — lowercase,
+   with the dash, ending in `.jpg`.
+2. On GitHub, open the **`images`** folder → **Add file** → **Upload files** → drag it
+   in → **Commit changes**.
+
+That's it. No code change — the page looks for that exact filename and uses it the
+moment it exists. Remove the file and the monogram comes back.
+
+A portrait-shaped photo works best, since the space is taller than it is wide. The
+image is cropped from the center outward and anchored to the top, so your head stays
+in frame. If the file ends in `.HEIC` (Apple's default), open it in Preview →
+**File → Export** → set Format to **JPEG** → save, or Chrome visitors won't see it.
+
+---
+
 ## Client reviews
 
 The "What clients say" section is **hidden until there's a real review to show**,

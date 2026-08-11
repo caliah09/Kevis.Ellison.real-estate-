@@ -177,6 +177,12 @@
   <section class="section section-light" id="about">
     <div class="wrap about-grid">
       <div class="about-photo reveal">
+        <!-- Drop a headshot at images/kevis-ellison.jpg and it replaces the
+             monogram automatically. Until then (or if it fails to load) the
+             "KE" block shows instead — see LISTINGS.md. -->
+        <img class="about-img" src="images/kevis-ellison.jpg"
+             alt="Kevis Ellison, Realtor with Linda Blue Real Estate"
+             onerror="this.remove()">
         <div class="about-photo-frame"></div>
         <span class="about-monogram">KE</span>
       </div>
