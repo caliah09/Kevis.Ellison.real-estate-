@@ -11,16 +11,16 @@
         "2 Baths",
         "2,300 Sq Ft"
       ],
-      "photo": "images/401-sw-11th-ave-1-exterior.webp",
-      "alt": "401 SW 11th Ave, Decatur, AL — front exterior of new construction home",
+      "photo": "images/401-sw-11th-ave-2-dusk.webp",
+      "alt": "401 SW 11th Ave, Decatur, AL — new construction home at dusk",
       "gallery": {
         "title": "More views — 401 SW 11th Ave",
-        "subtitle": "Exterior at dusk and the open living area",
+        "subtitle": "Daytime exterior and the open living area",
         "photos": [
           {
-            "photo": "images/401-sw-11th-ave-2-dusk.webp",
-            "caption": "At Dusk",
-            "alt": "401 SW 11th Ave — front exterior at dusk"
+            "photo": "images/401-sw-11th-ave-1-exterior.webp",
+            "caption": "Exterior",
+            "alt": "401 SW 11th Ave — front exterior in daylight"
           },
           {
             "photo": "images/401-sw-11th-ave-3-living.webp",
