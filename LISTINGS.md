@@ -110,6 +110,36 @@ If the page says listings couldn't be loaded, there's a typo. Paste the file int
 
 ---
 
+## Client reviews
+
+The "What clients say" section is **hidden until there's a real review to show**,
+so an empty file makes the site look finished rather than half-built.
+
+To add one, edit `testimonials.json`:
+
+```json
+{
+  "testimonials": [
+    {
+      "quote": "Kevis answered every call and walked us through our first closing.",
+      "name": "First Name L.",
+      "city": "Decatur"
+    }
+  ]
+}
+```
+
+The section appears as soon as there's one entry, and lays out cleanly with one,
+two, three or more.
+
+**Only add reviews you actually received.** Invented testimonials are fake
+endorsements — the FTC has rules against them, and for a licensed agent the
+exposure isn't worth it. If you have reviews on Zillow, realtor.com, your Google
+Business Profile, or Facebook, those are real and fair to quote. Asking a past
+client for a line by text works too.
+
+---
+
 ## Two notes about the site itself
 
 **Previewing locally.** Opening `index.html` by double-clicking it shows "Listings
