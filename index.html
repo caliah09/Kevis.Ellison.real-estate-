@@ -180,9 +180,9 @@
         <!-- Drop a headshot at images/kevis-ellison.jpg and it replaces the
              monogram automatically. Until then (or if it fails to load) the
              "KE" block shows instead — see LISTINGS.md. -->
-        <img class="about-img" src="images/kevis-ellison.jpg"
+        <img class="about-img" src="images/kevis-ellison.jpeg"
              alt="Kevis Ellison, Realtor with Linda Blue Real Estate"
-             data-fallbacks="images/kevis-ellison.jpeg images/kevis-ellison.png images/kevis-ellison.JPG"
+             data-fallbacks="images/kevis-ellison.jpg images/kevis-ellison.png images/kevis-ellison.JPG"
              onerror="var f=(this.dataset.fallbacks||'').split(' ').filter(Boolean); if (f.length) { this.dataset.fallbacks = f.slice(1).join(' '); this.src = f[0]; } else { this.remove(); }">
         <div class="about-photo-frame"></div>
         <span class="about-monogram">KE</span>
