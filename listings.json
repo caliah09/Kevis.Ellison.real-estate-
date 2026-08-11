@@ -1,6 +1,36 @@
 {
   "listings": [
     {
+      "price": "$287,500",
+      "address": "401 SW 11th Ave",
+      "city": "Decatur, AL",
+      "badge": "New Construction",
+      "status": "For Sale",
+      "specs": [
+        "3 Beds",
+        "2 Baths",
+        "2,300 Sq Ft"
+      ],
+      "photo": "images/401-sw-11th-ave-1-exterior.webp",
+      "alt": "401 SW 11th Ave, Decatur, AL — front exterior of new construction home",
+      "gallery": {
+        "title": "More views — 401 SW 11th Ave",
+        "subtitle": "Exterior at dusk and the open living area",
+        "photos": [
+          {
+            "photo": "images/401-sw-11th-ave-2-dusk.webp",
+            "caption": "At Dusk",
+            "alt": "401 SW 11th Ave — front exterior at dusk"
+          },
+          {
+            "photo": "images/401-sw-11th-ave-3-living.webp",
+            "caption": "Living & Kitchen",
+            "alt": "401 SW 11th Ave — open living area and kitchen with LVP flooring"
+          }
+        ]
+      }
+    },
+    {
       "price": "$105,000",
       "address": "223 SW 11th Ave",
       "city": "Decatur, AL",
