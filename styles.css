@@ -534,3 +534,46 @@ img { max-width: 100%; display: block; }
 .form-status.is-error { color: #FFB4A8; }
 .form-note { font-size: 0.86rem; color: var(--muted); }
 .form-note a { color: var(--paper); }
+
+/* ============ HERO PHOTOGRAPH (optional) ============ */
+/* Everything here only takes effect once images/hero.* loads and the img adds
+   .has-photo. Until then the hero is unchanged. */
+.hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  z-index: 0;
+}
+body.has-hero-photo .hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(100deg, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.66) 42%, rgba(10,10,10,0.28) 100%);
+}
+body.has-hero-photo .hero { color: var(--paper); }
+body.has-hero-photo .hero .hero-title,
+body.has-hero-photo .hero .hero-sub,
+body.has-hero-photo .hero .hero-meta { color: var(--paper); }
+body.has-hero-photo .hero .hero-sub { color: rgba(247,246,242,0.86); }
+body.has-hero-photo .hero .hero-meta { color: rgba(247,246,242,0.78); border-top-color: rgba(247,246,242,0.28); }
+body.has-hero-photo .hero .hero-ghost { color: rgba(247,246,242,0.07); }
+body.has-hero-photo .hero .btn-fill { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+body.has-hero-photo .hero .btn-fill:hover { background: transparent; color: var(--paper); }
+body.has-hero-photo .hero .btn-ghost { color: var(--paper); border-color: var(--paper); }
+body.has-hero-photo .hero .btn-ghost:hover { background: var(--paper); color: var(--ink); }
+/* The line drawing is redundant once there is a real photograph. */
+body.has-hero-photo .hero .blueprint { display: none; }
+@media (max-width: 700px) {
+  body.has-hero-photo .hero::after {
+    background: linear-gradient(180deg, rgba(10,10,10,0.62) 0%, rgba(10,10,10,0.78) 55%, rgba(10,10,10,0.88) 100%);
+  }
+}
+
+/* The nav is transparent until scrolled; over a dark hero photo its ink-coloured
+   text disappears entirely. Flip it light until the paper background arrives. */
+body.has-hero-photo .nav:not(.is-scrolled) { color: var(--paper); }
+body.has-hero-photo .nav:not(.is-scrolled) .nav-brand-tag { color: rgba(247,246,242,0.72); }
+body.has-hero-photo .nav:not(.is-scrolled) .nav-links a { color: var(--paper); }
+body.has-hero-photo .nav:not(.is-scrolled) .btn-fill {
+  background: var(--paper); color: var(--ink); border-color: var(--paper);
+}
+body.has-hero-photo .nav:not(.is-scrolled) .btn-fill:hover {
+  background: transparent; color: var(--paper);
+}

@@ -45,7 +45,14 @@
 <main id="top">
 
   <!-- ============ HERO ============ -->
-  <section class="hero section-light">
+  <section class="hero section-light" id="hero">
+    <!-- Drop a wide photo at images/hero.jpg and the hero switches to a
+         photographic treatment: image, scrim, light text. Without it the hero
+         renders exactly as it does now. See LISTINGS.md. -->
+    <img class="hero-img" src="images/hero.jpg" alt="" aria-hidden="true"
+         data-fallbacks="images/hero.jpeg"
+         onerror="var f=(this.dataset.fallbacks||'').split(' ').filter(Boolean); if (f.length) { this.dataset.fallbacks = f.slice(1).join(' '); this.src = f[0]; } else { this.remove(); }"
+         onload="document.body.classList.add('has-hero-photo')">
     <span class="hero-ghost" aria-hidden="true">NORTH ALABAMA</span>
     <div class="wrap hero-inner">
       <h1 class="hero-title">Real estate,<br>rooted in <em>trust</em>.</h1>
