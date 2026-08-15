@@ -237,15 +237,6 @@ img { max-width: 100%; display: block; }
   display: flex; flex-wrap: wrap; gap: 8px 28px;
 }
 
-/* architectural line-art accent (placeholder for real photography) */
-.blueprint {
-  position: absolute; right: -4%; bottom: -6%;
-  width: min(46vw, 560px); opacity: 0.9;
-  pointer-events: none;
-}
-.blueprint svg { width: 100%; height: auto; display: block; }
-.blueprint svg * { stroke: var(--ink); fill: none; }
-@media (max-width: 860px) { .blueprint { display: none; } }
 
 /* ============ CREDENTIALS STRIP ============ */
 .creds { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -535,48 +526,6 @@ img { max-width: 100%; display: block; }
 .form-note { font-size: 0.86rem; color: var(--muted); }
 .form-note a { color: var(--paper); }
 
-/* ============ HERO PHOTOGRAPH (optional) ============ */
-/* Everything here only takes effect once images/hero.* loads and the img adds
-   .has-photo. Until then the hero is unchanged. */
-.hero-img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; object-fit: cover; object-position: center;
-  z-index: 0;
-}
-body.has-hero-photo .hero::after {
-  content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(100deg, rgba(10,10,10,0.82) 0%, rgba(10,10,10,0.66) 42%, rgba(10,10,10,0.28) 100%);
-}
-body.has-hero-photo .hero { color: var(--paper); }
-body.has-hero-photo .hero .hero-title,
-body.has-hero-photo .hero .hero-sub,
-body.has-hero-photo .hero .hero-meta { color: var(--paper); }
-body.has-hero-photo .hero .hero-sub { color: rgba(247,246,242,0.86); }
-body.has-hero-photo .hero .hero-meta { color: rgba(247,246,242,0.78); border-top-color: rgba(247,246,242,0.28); }
-body.has-hero-photo .hero .hero-ghost { color: rgba(247,246,242,0.07); }
-body.has-hero-photo .hero .btn-fill { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-body.has-hero-photo .hero .btn-fill:hover { background: transparent; color: var(--paper); }
-body.has-hero-photo .hero .btn-ghost { color: var(--paper); border-color: var(--paper); }
-body.has-hero-photo .hero .btn-ghost:hover { background: var(--paper); color: var(--ink); }
-/* The line drawing is redundant once there is a real photograph. */
-body.has-hero-photo .hero .blueprint { display: none; }
-@media (max-width: 700px) {
-  body.has-hero-photo .hero::after {
-    background: linear-gradient(180deg, rgba(10,10,10,0.62) 0%, rgba(10,10,10,0.78) 55%, rgba(10,10,10,0.88) 100%);
-  }
-}
-
-/* The nav is transparent until scrolled; over a dark hero photo its ink-coloured
-   text disappears entirely. Flip it light until the paper background arrives. */
-body.has-hero-photo .nav:not(.is-scrolled) { color: var(--paper); }
-body.has-hero-photo .nav:not(.is-scrolled) .nav-brand-tag { color: rgba(247,246,242,0.72); }
-body.has-hero-photo .nav:not(.is-scrolled) .nav-links a { color: var(--paper); }
-body.has-hero-photo .nav:not(.is-scrolled) .btn-fill {
-  background: var(--paper); color: var(--ink); border-color: var(--paper);
-}
-body.has-hero-photo .nav:not(.is-scrolled) .btn-fill:hover {
-  background: transparent; color: var(--paper);
-}
 
 /* External-link arrow, used on the ValleyMLS buttons. */
 .btn-icon { width: 14px; height: 14px; flex: none; }
@@ -584,4 +533,50 @@ body.has-hero-photo .nav:not(.is-scrolled) .btn-fill:hover {
 .props-cta-text {
   max-width: 46ch; margin: 0 auto 26px;
   font-size: 1.02rem; color: var(--muted); line-height: 1.7;
+}
+
+/* ============ HERO FEATURED LISTING ============ */
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 52px; align-items: center; width: 100%; }
+@media (min-width: 980px) { .hero-grid { grid-template-columns: 1.02fr 0.98fr; gap: 76px; } }
+.hero-inner { position: relative; z-index: 2; }
+
+.hero-feature {
+  position: relative; z-index: 2;
+  background: var(--paper); border: 1px solid var(--line);
+  box-shadow: 0 24px 60px -32px rgba(10, 10, 10, 0.45);
+  text-decoration: none; color: inherit; display: block;
+}
+.hero-feature[hidden] { display: none; }
+.hero-feature-media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--mist); }
+.hero-feature-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.hero-feature:hover .hero-feature-media img { transform: scale(1.04); }
+.hero-feature-tag {
+  position: absolute; top: 14px; left: 14px;
+  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 7px 12px; background: var(--ink); color: var(--paper);
+}
+.hero-feature-body { padding: 26px 28px 28px; }
+.hero-feature-eyebrow {
+  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--muted);
+}
+.hero-feature-price { margin-top: 12px; font-family: var(--font-display); font-size: 2rem; line-height: 1; }
+.hero-feature-addr { margin-top: 10px; font-size: 1rem; }
+.hero-feature-city { font-size: 0.9rem; color: var(--muted); }
+.hero-feature-specs {
+  margin-top: 16px; padding-top: 15px; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.82rem; color: var(--muted);
+}
+.hero-feature-link {
+  margin-top: 20px; display: inline-flex; align-items: center; gap: 9px;
+  font-size: 0.76rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  border-bottom: 1px solid currentColor; padding-bottom: 4px;
+}
+.hero-feature-link svg { width: 13px; height: 13px; }
+@media (max-width: 979px) {
+  .hero-ghost { display: none; }
+  .hero-feature { max-width: 460px; }
 }

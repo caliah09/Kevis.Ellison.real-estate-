@@ -46,38 +46,26 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero section-light" id="hero">
-    <!-- Drop a wide photo at images/hero.jpg and the hero switches to a
-         photographic treatment: image, scrim, light text. Without it the hero
-         renders exactly as it does now. See LISTINGS.md. -->
-    <img class="hero-img" src="images/hero.webp" alt="" aria-hidden="true"
-         data-fallbacks="images/hero.jpg images/hero.jpeg"
-         onerror="var f=(this.dataset.fallbacks||'').split(' ').filter(Boolean); if (f.length) { this.dataset.fallbacks = f.slice(1).join(' '); this.src = f[0]; } else { this.remove(); }"
-         onload="document.body.classList.add('has-hero-photo')">
     <span class="hero-ghost" aria-hidden="true">NORTH ALABAMA</span>
-    <div class="wrap hero-inner">
-      <h1 class="hero-title">Real estate,<br>rooted in <em>trust</em>.</h1>
-      <p class="hero-sub">Residential and commercial real estate across North Alabama — for buyers, sellers, and everyone deciding what's next.</p>
-      <div class="hero-actions">
-        <a class="btn btn-fill" href="#properties">View Properties</a>
-        <a class="btn btn-ghost" href="tel:+12563454901">Call (256) 345-4901</a>
+    <div class="wrap hero-grid">
+      <div class="hero-inner">
+        <h1 class="hero-title">Real estate,<br>rooted in <em>trust</em>.</h1>
+        <p class="hero-sub">Residential and commercial real estate across North Alabama — for buyers, sellers, and everyone deciding what's next.</p>
+        <div class="hero-actions">
+          <a class="btn btn-fill" href="#properties">View Properties</a>
+          <a class="btn btn-ghost" href="tel:+12563454901">Call (256) 345-4901</a>
+        </div>
+        <div class="hero-meta">
+          <span>Morgan County</span>
+          <span>Madison County</span>
+          <span>Lawrence County</span>
+          <span>Lauderdale County</span>
+        </div>
       </div>
-      <div class="hero-meta">
-        <span>Morgan County</span>
-        <span>Madison County</span>
-        <span>Lawrence County</span>
-        <span>Lauderdale County</span>
-      </div>
-    </div>
-    <div class="blueprint" aria-hidden="true">
-      <svg viewBox="0 0 400 320" fill="none">
-        <path d="M20 320 L20 160 L200 40 L380 160 L380 320" stroke-width="1.4"/>
-        <path d="M60 320 L60 190 L200 100 L340 190 L340 320" stroke-width="1"/>
-        <line x1="20" y1="320" x2="380" y2="320" stroke-width="1.4"/>
-        <rect x="90" y="230" width="46" height="90" stroke-width="1"/>
-        <rect x="170" y="200" width="60" height="120" stroke-width="1"/>
-        <rect x="260" y="240" width="46" height="80" stroke-width="1"/>
-        <line x1="200" y1="40" x2="200" y2="100" stroke-width="1"/>
-      </svg>
+
+      <!-- The newest listing, rendered from listings.json. Stays hidden until
+           there is one, so the hero never shows an empty frame. -->
+      <aside class="hero-feature" id="hero-feature" hidden></aside>
     </div>
   </section>
 
@@ -559,6 +547,58 @@
     note.hidden = true;
     observeReveals(grid);
     observeReveals(spotlights);
+    buildHeroFeature(items[0]);
+  }
+
+  // The newest listing, lifted into the hero so real inventory is the first
+  // thing above the fold rather than decoration.
+  function buildHeroFeature(item) {
+    var mount = document.getElementById("hero-feature");
+    if (!mount || !item) { return; }
+
+    var href = safeUrl(item.url);
+    var card = el(href ? "a" : "div", "hero-feature-inner");
+    if (href) {
+      card.href = href;
+      card.target = "_blank";
+      card.rel = "noopener";
+      card.style.textDecoration = "none";
+      card.style.color = "inherit";
+    }
+
+    var media = el("div", "hero-feature-media");
+    if (item.photo) {
+      media.appendChild(photoEl(item.photo, item.alt || item.address || ""));
+    } else {
+      media.insertAdjacentHTML("beforeend", ART[item.art] || ART.house);
+    }
+    if (item.status) { media.appendChild(el("span", "hero-feature-tag", item.status)); }
+    card.appendChild(media);
+
+    var body = el("div", "hero-feature-body");
+    body.appendChild(el("div", "hero-feature-eyebrow", item.badge || "Featured listing"));
+    if (item.price) { body.appendChild(el("div", "hero-feature-price tnum", item.price)); }
+    if (item.address) { body.appendChild(el("div", "hero-feature-addr", item.address)); }
+    if (item.city) { body.appendChild(el("div", "hero-feature-city", item.city)); }
+
+    var specs = item.specs || [];
+    if (specs.length) {
+      var row = el("div", "hero-feature-specs");
+      specs.forEach(function (s) { row.appendChild(el("span", "tnum", s)); });
+      body.appendChild(row);
+    }
+    if (href) {
+      var link = el("span", "hero-feature-link");
+      link.appendChild(el("span", null, "View this property"));
+      link.insertAdjacentHTML("beforeend",
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>');
+      body.appendChild(link);
+    }
+    card.appendChild(body);
+
+    mount.textContent = "";
+    mount.appendChild(card);
+    mount.hidden = false;
   }
 
   if (grid && spotlights && note) {
