@@ -577,3 +577,11 @@ body.has-hero-photo .nav:not(.is-scrolled) .btn-fill {
 body.has-hero-photo .nav:not(.is-scrolled) .btn-fill:hover {
   background: transparent; color: var(--paper);
 }
+
+/* External-link arrow, used on the ValleyMLS buttons. */
+.btn-icon { width: 14px; height: 14px; flex: none; }
+.btn-lg { padding: 19px 38px; font-size: 0.92rem; }
+.props-cta-text {
+  max-width: 46ch; margin: 0 auto 26px;
+  font-size: 1.02rem; color: var(--muted); line-height: 1.7;
+}

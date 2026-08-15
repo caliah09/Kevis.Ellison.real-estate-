@@ -49,8 +49,8 @@
     <!-- Drop a wide photo at images/hero.jpg and the hero switches to a
          photographic treatment: image, scrim, light text. Without it the hero
          renders exactly as it does now. See LISTINGS.md. -->
-    <img class="hero-img" src="images/hero.jpg" alt="" aria-hidden="true"
-         data-fallbacks="images/hero.jpeg"
+    <img class="hero-img" src="images/hero.webp" alt="" aria-hidden="true"
+         data-fallbacks="images/hero.jpg images/hero.jpeg"
          onerror="var f=(this.dataset.fallbacks||'').split(' ').filter(Boolean); if (f.length) { this.dataset.fallbacks = f.slice(1).join(' '); this.src = f[0]; } else { this.remove(); }"
          onload="document.body.classList.add('has-hero-photo')">
     <span class="hero-ghost" aria-hidden="true">NORTH ALABAMA</span>
@@ -112,7 +112,7 @@
           <h2>Featured properties.</h2>
         </div>
         <a class="btn btn-ghost" href="https://kevisellison.valleymls.com/"
-           target="_blank" rel="noopener">View All Listings</a>
+           target="_blank" rel="noopener">View All Listings <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
       </div>
 
       <!-- Cards are rendered from listings.json — see LISTINGS.md to add a listing. -->
@@ -128,8 +128,10 @@
       </noscript>
 
       <div class="props-cta reveal">
-        <a class="btn btn-ghost" href="https://kevisellison.valleymls.com/"
-           target="_blank" rel="noopener">See Every Listing on ValleyMLS</a>
+        <p class="props-cta-text">These are a few of them. Kevis's full inventory lives on
+          ValleyMLS, updated the moment anything changes.</p>
+        <a class="btn btn-fill btn-lg" href="https://kevisellison.valleymls.com/"
+           target="_blank" rel="noopener">See Every Listing on ValleyMLS <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
       </div>
 
       <div id="props-spotlights"></div>
