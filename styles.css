@@ -196,7 +196,9 @@ img { max-width: 100%; display: block; }
 }
 .mobile-menu .btn { margin-top: 24px; align-self: flex-start; }
 
-@media (min-width: 860px) {
+/* 1060px, not 860: adding the click-to-call button left the links overlapping
+   it from 860 all the way to ~1030. Below this the hamburger handles it. */
+@media (min-width: 1060px) {
   .nav-links { display: flex; }
   .nav .btn { display: inline-flex; }
   .nav-toggle { display: none; }
@@ -580,3 +582,71 @@ img { max-width: 100%; display: block; }
   .hero-ghost { display: none; }
   .hero-feature { max-width: 460px; }
 }
+
+/* ============ ADVISORY PANEL ============ */
+.advisory-head { max-width: 62ch; }
+.advisory-lede { margin-top: 22px; font-size: 1.05rem; color: var(--muted); line-height: 1.7; }
+.advisory-direct { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+.advisory-panel {
+  margin-top: 62px; max-width: 680px;
+  border: 1px solid rgba(247, 246, 242, 0.18);
+  background: rgba(247, 246, 242, 0.03);
+}
+
+/* --- segmented tabs --- */
+.tablist {
+  position: relative;
+  /* minmax(0,1fr), not 1fr: plain 1fr floors at min-content, so "Commercial"
+     stole width from the other two and the sliding indicator drifted off. */
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid rgba(247, 246, 242, 0.18);
+}
+.tab {
+  position: relative; z-index: 1;
+  padding: 20px 12px;
+  font-family: var(--font-ui); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(247, 246, 242, 0.55);
+  background: transparent; border: 0; cursor: pointer;
+  transition: color .25s ease, background-color .25s ease;
+  min-height: 60px;
+}
+.tab + .tab { box-shadow: inset 1px 0 0 rgba(247, 246, 242, 0.14); }
+.tab:hover { color: rgba(247, 246, 242, 0.85); background: rgba(247, 246, 242, 0.04); }
+.tab[aria-selected="true"] { color: var(--ink); }
+.tab:focus-visible { outline: 2px solid var(--paper); outline-offset: -4px; }
+/* Tighten the type so the longest label still fits an equal third of a 320px screen. */
+@media (max-width: 460px) {
+  .tab { padding: 18px 6px; font-size: 0.68rem; letter-spacing: 0.08em; }
+}
+/* The moving block behind the active tab — one element, so nothing reflows. */
+.tab-indicator {
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: calc(100% / 3); background: var(--paper);
+  transition: transform .32s cubic-bezier(.4, 0, .2, 1);
+  pointer-events: none;
+}
+
+.advisory-form { padding: 30px 30px 34px; display: flex; flex-direction: column; gap: 18px; color-scheme: dark; }
+@media (max-width: 560px) { .advisory-form { padding: 24px 20px 28px; } }
+/* Reserved height stops the panel jumping when copy of a different length swaps in. */
+.advisory-intro { color: var(--muted); font-size: 0.98rem; line-height: 1.65; min-height: 3.3em; margin: 0; }
+@media (max-width: 560px) { .advisory-intro { min-height: 4.95em; } }
+.advisory-privacy { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+.advisory-privacy a { color: var(--paper); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-indicator { transition: none; }
+}
+
+/* Keyboard users land here first; invisible until focused. */
+.skip-link {
+  position: absolute; top: 0; left: 0; z-index: 200;
+  transform: translateY(-120%);
+  background: var(--ink); color: var(--paper);
+  padding: 14px 22px; text-decoration: none;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  transition: transform .2s ease;
+}
+.skip-link:focus { transform: translateY(0); }
