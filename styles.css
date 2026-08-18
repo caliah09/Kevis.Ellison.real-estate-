@@ -33,6 +33,13 @@
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-ui: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* --ink and --paper swap with the colour scheme, which is right for body
+     text. Sections that are deliberately dark must NOT swap, or they invert
+     into the brightest thing on the page in dark mode and every hairline
+     drawn on them disappears. These two never change. */
+  --always-ink: #0A0A0A;
+  --always-paper: #F7F6F2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -90,7 +97,7 @@ img { max-width: 100%; display: block; }
 }
 .section-light { background: var(--paper); color: var(--ink); }
 .section-mist { background: var(--mist); color: var(--ink); }
-.section-dark { background: var(--ink); color: var(--paper); }
+.section-dark { background: var(--always-ink); color: var(--always-paper); }
 .section-dark .eyebrow { color: var(--muted); }
 .section { padding: 110px 0; }
 @media (max-width: 700px) { .section { padding: 72px 0; } }
@@ -105,12 +112,12 @@ img { max-width: 100%; display: block; }
 }
 .btn-fill { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .btn-fill:hover { background: transparent; color: var(--ink); }
-.section-dark .btn-fill { background: var(--paper); color: var(--ink); border-color: var(--paper); }
-.section-dark .btn-fill:hover { background: transparent; color: var(--paper); }
+.section-dark .btn-fill { background: var(--always-paper); color: var(--always-ink); border-color: var(--always-paper); }
+.section-dark .btn-fill:hover { background: transparent; color: var(--always-paper); }
 .btn-ghost { background: transparent; color: var(--ink); }
 .btn-ghost:hover { background: var(--ink); color: var(--paper); }
-.section-dark .btn-ghost { color: var(--paper); }
-.section-dark .btn-ghost:hover { background: var(--paper); color: var(--ink); }
+.section-dark .btn-ghost { color: var(--always-paper); }
+.section-dark .btn-ghost:hover { background: var(--always-paper); color: var(--always-ink); }
 
 /* ============ NAV ============ */
 .nav {
@@ -486,7 +493,7 @@ img { max-width: 100%; display: block; }
   /* 16px exactly — iOS Safari zooms the whole page when a focused field is smaller. */
   font: inherit; font-size: 1rem; width: 100%;
   padding: 13px 14px; border-radius: 0;
-  color: var(--paper);
+  color: var(--always-paper);
   background: rgba(247, 246, 242, 0.06);
   border: 1px solid rgba(247, 246, 242, 0.24);
   transition: border-color .2s ease, background-color .2s ease;
@@ -494,7 +501,7 @@ img { max-width: 100%; display: block; }
 .field textarea { resize: vertical; min-height: 120px; }
 .field input:hover, .field select:hover, .field textarea:hover { border-color: rgba(247, 246, 242, 0.45); }
 .field input:focus, .field select:focus, .field textarea:focus {
-  outline: 2px solid var(--paper); outline-offset: 2px;
+  outline: 2px solid var(--always-paper); outline-offset: 2px;
   border-color: transparent; background: rgba(247, 246, 242, 0.1);
 }
 /* Hidden from people, tempting to bots. Not display:none — some bots skip those. */
@@ -505,7 +512,7 @@ img { max-width: 100%; display: block; }
 .form-status:empty { display: none; }
 .form-status.is-error { color: #FFB4A8; }
 .form-note { font-size: 0.86rem; color: var(--muted); }
-.form-note a { color: var(--paper); }
+.form-note a { color: var(--always-paper); }
 
 
 /* External-link arrow, used on the ValleyMLS buttons. */
@@ -593,8 +600,8 @@ img { max-width: 100%; display: block; }
 }
 .tab + .tab { box-shadow: inset 1px 0 0 rgba(247, 246, 242, 0.14); }
 .tab:hover { color: rgba(247, 246, 242, 0.85); background: rgba(247, 246, 242, 0.04); }
-.tab[aria-selected="true"] { color: var(--ink); }
-.tab:focus-visible { outline: 2px solid var(--paper); outline-offset: -4px; }
+.tab[aria-selected="true"] { color: var(--always-ink); }
+.tab:focus-visible { outline: 2px solid var(--always-paper); outline-offset: -4px; }
 /* Tighten the type so the longest label still fits an equal third of a 320px screen. */
 @media (max-width: 460px) {
   .tab { padding: 18px 6px; font-size: 0.68rem; letter-spacing: 0.08em; }
@@ -602,7 +609,7 @@ img { max-width: 100%; display: block; }
 /* The moving block behind the active tab — one element, so nothing reflows. */
 .tab-indicator {
   position: absolute; top: 0; bottom: 0; left: 0;
-  width: calc(100% / 3); background: var(--paper);
+  width: calc(100% / 3); background: var(--always-paper);
   transition: transform .32s cubic-bezier(.4, 0, .2, 1);
   pointer-events: none;
 }
@@ -613,7 +620,7 @@ img { max-width: 100%; display: block; }
 .advisory-intro { color: var(--muted); font-size: 0.98rem; line-height: 1.65; min-height: 3.3em; margin: 0; }
 @media (max-width: 560px) { .advisory-intro { min-height: 4.95em; } }
 .advisory-privacy { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
-.advisory-privacy a { color: var(--paper); }
+.advisory-privacy a { color: var(--always-paper); }
 
 @media (prefers-reduced-motion: reduce) {
   .tab-indicator { transition: none; }
@@ -698,7 +705,7 @@ img { max-width: 100%; display: block; }
   transition: opacity .35s ease, transform .35s ease;
 }
 .area-list a:hover, .area-list a:focus-visible { padding-left: 18px; }
-.area-list a:hover .area-name, .area-list a:focus-visible .area-name { color: var(--paper); }
+.area-list a:hover .area-name, .area-list a:focus-visible .area-name { color: var(--always-paper); }
 .area-list a:hover .area-note, .area-list a:focus-visible .area-note { opacity: 1; transform: translateX(0); }
 @media (max-width: 620px) {
   .area-list a { flex-direction: column; align-items: flex-start; gap: 6px; }
