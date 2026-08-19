@@ -132,6 +132,37 @@ in frame. If the file ends in `.HEIC` (Apple's default), open it in Preview →
 
 ---
 
+## Recently closed
+
+The "Recently closed" section is **hidden until there's at least one entry**, exactly like
+the reviews section. Add closed sales to `transactions.json`:
+
+```json
+{
+  "transactions": [
+    {
+      "year": "2026",
+      "address": "1511 10th Ave SE",
+      "city": "Decatur, AL",
+      "price": "$235,500",
+      "side": "Listed"
+    }
+  ]
+}
+```
+
+`side` should read **"Listed"** when you were the listing agent, or **"Represented the
+buyer"** when you were on the buy side. Both belong on the page — they just need the
+honest label.
+
+No photos needed; it's a typographic ledger by design. Five or six recent closings reads
+like a track record. Thirty reads like padding.
+
+**Only real closed transactions**, and only ones you can point to in the MLS. Check with
+your broker whether ValleyMLS requires specific wording when advertising sales.
+
+---
+
 ## Client reviews
 
 The "What clients say" section is **hidden until there's a real review to show**,

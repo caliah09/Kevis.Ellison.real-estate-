@@ -359,6 +359,19 @@
     </div>
   </section>
 
+  <!-- ============ CLOSED TRANSACTIONS ============ -->
+  <!-- Rendered from transactions.json. Hidden until there is at least one. -->
+  <section class="section section-light" id="transactions" hidden>
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Track Record</span>
+        <h2>Recently closed.</h2>
+      </div>
+      <ol class="ledger reveal" id="ledger"></ol>
+      <p class="ledger-note reveal">Closed transactions with Linda Blue Real Estate, LLC.</p>
+    </div>
+  </section>
+
   <!-- ============ TESTIMONIALS ============ -->
   <section class="section section-light" id="testimonials" hidden>
     <div class="wrap">
@@ -744,6 +757,42 @@
       .catch(function (err) {
         // Leave the section hidden — better a shorter page than an empty one.
         if (window.console) { console.error("testimonials.json failed to load:", err); }
+      });
+  }
+
+  /* ============ CLOSED TRANSACTIONS ============ */
+
+  var ledgerSection = document.getElementById("transactions");
+  var ledger = document.getElementById("ledger");
+
+  function renderLedger(data) {
+    var items = (data && data.transactions) || [];
+    ledger.textContent = "";
+
+    items.forEach(function (item) {
+      if (!item || !item.address) { return; }
+      var row = el("li", "ledger-row");
+      row.appendChild(el("span", "ledger-year tnum", item.year || ""));
+      var place = el("span", "ledger-place");
+      place.appendChild(el("span", "ledger-addr", item.address));
+      if (item.city) { place.appendChild(el("span", "ledger-city", item.city)); }
+      row.appendChild(place);
+      row.appendChild(el("span", "ledger-price tnum", item.price || ""));
+      row.appendChild(el("span", "ledger-side", item.side || ""));
+      ledger.appendChild(row);
+    });
+
+    if (!ledger.children.length) { return; }
+    ledgerSection.hidden = false;
+    observeReveals(ledgerSection);
+  }
+
+  if (ledgerSection && ledger) {
+    fetch("transactions.json", { cache: "no-cache" })
+      .then(function (res) { if (!res.ok) { throw new Error("HTTP " + res.status); } return res.json(); })
+      .then(renderLedger)
+      .catch(function (err) {
+        if (window.console) { console.error("transactions.json failed to load:", err); }
       });
   }
 

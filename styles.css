@@ -770,3 +770,25 @@ img { max-width: 100%; display: block; }
 @media (prefers-reduced-motion: reduce) {
   .prop-price, .prop-view-link, .prop-view-link svg { transition: none; }
 }
+
+/* ============ CLOSED TRANSACTIONS ============ */
+.ledger { margin: 54px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.ledger-row {
+  display: grid; grid-template-columns: 1fr; gap: 4px 28px;
+  padding: 24px 0; border-bottom: 1px solid var(--line-strong);
+  align-items: baseline;
+}
+@media (min-width: 820px) {
+  .ledger-row { grid-template-columns: 5rem 1fr auto 13rem; gap: 32px; padding: 28px 0; }
+}
+.ledger-year { font-size: 0.8rem; letter-spacing: 0.1em; color: var(--muted); }
+.ledger-place { display: flex; flex-direction: column; gap: 3px; }
+.ledger-addr { font-family: var(--font-display); font-size: clamp(1.3rem, 2.6vw, 1.8rem); line-height: 1.1; }
+.ledger-city { font-size: 0.86rem; color: var(--muted); }
+.ledger-price { font-family: var(--font-display); font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+.ledger-side {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted);
+}
+@media (min-width: 820px) { .ledger-side { text-align: right; } }
+.ledger-note { margin-top: 26px; font-size: 0.82rem; color: var(--muted); }
