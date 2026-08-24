@@ -1,4 +1,12 @@
 {
-  "_howto": "Closed transactions only, and only ones you can point to in the MLS. Each entry: year, address, city, price, and side — use \"Listed\" when you were the listing agent and \"Represented the buyer\" when you were on the buy side. The section stays hidden on the site until there is at least one, so an empty list is fine. Five or six recent ones reads better than thirty.",
-  "transactions": []
+  "_howto": "Closed transactions only, and only ones you can point to in the MLS. Each entry: year, address, city, price, and side \u2014 use \"Listed\" when you were the listing agent and \"Represented the buyer\" when you were on the buy side. The section stays hidden on the site until there is at least one, so an empty list is fine. Five or six recent ones reads better than thirty.",
+  "transactions": [
+    {
+      "year": "2026",
+      "address": "2716 Lexington Ave SW",
+      "city": "Decatur, AL",
+      "price": "",
+      "side": "Listed"
+    }
+  ]
 }
