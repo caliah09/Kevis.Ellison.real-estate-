@@ -141,6 +141,47 @@
           }
         ]
       }
+    },
+    {
+      "price": "$159,000",
+      "address": "211 13th Ave NW",
+      "city": "Decatur, AL",
+      "status": "Pending",
+      "specs": [
+        "3 Beds",
+        "3 Baths",
+        "2,153 Sq Ft",
+        "0.22 Acre Lot"
+      ],
+      "url": "https://www.valleymls.com/homes-for-sale/211-13th-Avenue-NW-Decatur-AL-35601-435958925",
+      "photo": "images/211-13th-ave-nw-1.webp",
+      "alt": "211 13th Ave NW, Decatur, AL \u2014 front exterior",
+      "gallery": {
+        "title": "More views \u2014 211 13th Ave NW",
+        "subtitle": "Dusk exterior, living room, primary bedroom, floor plan",
+        "photos": [
+          {
+            "photo": "images/211-13th-ave-nw-2.webp",
+            "caption": "Exterior at Dusk",
+            "alt": "211 13th Ave NW \u2014 exterior at dusk"
+          },
+          {
+            "photo": "images/211-13th-ave-nw-3.webp",
+            "caption": "Living Room",
+            "alt": "211 13th Ave NW \u2014 living room"
+          },
+          {
+            "photo": "images/211-13th-ave-nw-4.webp",
+            "caption": "Primary Bedroom",
+            "alt": "211 13th Ave NW \u2014 primary bedroom"
+          },
+          {
+            "photo": "images/211-13th-ave-nw-5.webp",
+            "caption": "Floor Plan",
+            "alt": "211 13th Ave NW \u2014 floor plan"
+          }
+        ]
+      }
     }
   ]
 }
