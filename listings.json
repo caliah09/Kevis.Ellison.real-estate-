@@ -96,6 +96,51 @@
           }
         ]
       }
+    },
+    {
+      "price": "$225,000",
+      "address": "605 Trenholm Memorial Dr",
+      "city": "Tuscumbia, AL",
+      "status": "For Sale",
+      "specs": [
+        "3 Beds",
+        "2 Baths",
+        "2,007 Sq Ft"
+      ],
+      "url": "https://www.realtor.com/realestateandhomes-detail/605-Trenholm-Memorial-Dr_Tuscumbia_AL_35674_M78901-99973",
+      "photo": "images/605-trenholm-memorial-dr-1.webp",
+      "alt": "605 Trenholm Memorial Dr, Tuscumbia, AL \u2014 front exterior",
+      "gallery": {
+        "title": "More views \u2014 605 Trenholm Memorial Dr",
+        "subtitle": "Backyard, living room, kitchen, bedroom",
+        "photos": [
+          {
+            "photo": "images/605-trenholm-memorial-dr-2.webp",
+            "caption": "Backyard",
+            "alt": "605 Trenholm Memorial Dr \u2014 backyard exterior"
+          },
+          {
+            "photo": "images/605-trenholm-memorial-dr-3.webp",
+            "caption": "Side Exterior",
+            "alt": "605 Trenholm Memorial Dr \u2014 side exterior"
+          },
+          {
+            "photo": "images/605-trenholm-memorial-dr-4.webp",
+            "caption": "Living Room",
+            "alt": "605 Trenholm Memorial Dr \u2014 living room"
+          },
+          {
+            "photo": "images/605-trenholm-memorial-dr-5.webp",
+            "caption": "Kitchen",
+            "alt": "605 Trenholm Memorial Dr \u2014 kitchen"
+          },
+          {
+            "photo": "images/605-trenholm-memorial-dr-6.webp",
+            "caption": "Bedroom",
+            "alt": "605 Trenholm Memorial Dr \u2014 bedroom"
+          }
+        ]
+      }
     }
   ]
 }
