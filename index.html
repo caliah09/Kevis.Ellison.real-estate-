@@ -606,7 +606,7 @@
     return card;
   }
 
-  function buildSpotlight(gallery) {
+  function buildSpotlight(gallery, href) {
     var section = el("div", "spotlight reveal");
 
     var head = el("div", "spotlight-head");
@@ -617,7 +617,10 @@
     var strip = el("div", "spotlight-strip");
     (gallery.photos || []).forEach(function (p) {
       if (!p || !p.photo) { return; }
-      var item = el("div", "spotlight-item");
+      // Same destination as the card photo above — these are more views of
+      // that listing, so clicking one should go where clicking the card does.
+      var item = el(href ? "a" : "div", "spotlight-item");
+      if (href) { item.href = href; item.target = "_blank"; item.rel = "noopener"; }
       item.appendChild(photoEl(p.photo, p.alt || p.caption));
       if (p.caption) { item.appendChild(el("span", "spotlight-caption", p.caption)); }
       strip.appendChild(item);
@@ -645,7 +648,8 @@
       grid.appendChild(card);
       var gallery = item.gallery;
       if (gallery && gallery.photos && gallery.photos.length) {
-        spotlights.appendChild(buildSpotlight(gallery));
+        var href = (item.demo !== true && safeUrl(item.url)) || "";
+        spotlights.appendChild(buildSpotlight(gallery, href));
       }
     });
 
@@ -772,7 +776,16 @@
     items.forEach(function (item) {
       if (!item || !item.address) { return; }
       var row = el("li", "ledger-row");
-      row.appendChild(el("span", "ledger-year tnum", item.year || ""));
+      var lead = el("div", "ledger-lead");
+      // Optional: most entries won't have a photo, and the row still reads
+      // fine as plain text when they don't.
+      if (item.photo) {
+        var thumb = photoEl(item.photo, item.alt || item.address);
+        thumb.className = "ledger-thumb";
+        lead.appendChild(thumb);
+      }
+      lead.appendChild(el("span", "ledger-year tnum", item.year || ""));
+      row.appendChild(lead);
       var place = el("span", "ledger-place");
       place.appendChild(el("span", "ledger-addr", item.address));
       if (item.city) { place.appendChild(el("span", "ledger-city", item.city)); }

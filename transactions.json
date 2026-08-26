@@ -1,12 +1,14 @@
 {
-  "_howto": "Closed transactions only, and only ones you can point to in the MLS. Each entry: year, address, city, price, and side \u2014 use \"Listed\" when you were the listing agent and \"Represented the buyer\" when you were on the buy side. The section stays hidden on the site until there is at least one, so an empty list is fine. Five or six recent ones reads better than thirty.",
+  "_howto": "Closed transactions only, and only ones you can point to in the MLS. Each entry: year, address, city, price, and side \u2014 use \"Listed\" when you were the listing agent and \"Represented the buyer\" when you were on the buy side. \"photo\" is optional \u2014 add one and a small thumbnail shows next to the entry; leave it out and the row is just text, exactly as before. The section stays hidden on the site until there is at least one, so an empty list is fine. Five or six recent ones reads better than thirty.",
   "transactions": [
     {
       "year": "2026",
       "address": "2716 Lexington Ave SW",
       "city": "Decatur, AL",
       "price": "",
-      "side": "Listed"
+      "side": "Listed",
+      "photo": "images/2716-lexington-ave-sw-1-exterior.webp",
+      "alt": "2716 Lexington Ave SW, Decatur, AL \u2014 exterior"
     }
   ]
 }
