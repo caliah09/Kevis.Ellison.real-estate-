@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Share your experience working with Kevis Ellison, Realtor with Linda Blue Real Estate. Takes two minutes and goes straight to him.">
+<title>Share Your Experience — Kevis Ellison, Realtor</title>
+<link rel="canonical" href="https://kevisellison.com/review.html">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0A0A">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23F7F6F2' text-anchor='middle'%3EKE%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="styles.css">
+
+<nav class="doc-nav">
+  <a class="nav-brand" href="index.html">
+    <span class="nav-brand-name">Kevis Ellison</span>
+    <span class="nav-brand-tag">Realtor® · Linda Blue Real Estate</span>
+  </a>
+  <a class="nav-call" href="tel:+12563454901" aria-label="Call Kevis Ellison at 2 5 6, 3 4 5, 4 9 0 1">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+    <span class="nav-call-text">(256) 345-4901</span>
+  </a>
+</nav>
+
+<main>
+  <section class="section section-dark">
+    <div class="wrap" style="max-width: 760px;">
+      <div class="advisory-head" style="max-width: none;">
+        <span class="eyebrow">Client Experiences</span>
+        <h1 style="margin-top: 14px; font-family: var(--font-display); font-weight: 400; font-size: clamp(2rem, 5vw, 2.8rem);">Tell us how it went.</h1>
+        <p class="advisory-lede">Whether you bought, sold, or just talked things through with Kevis — a few honest
+          sentences helps the next person as much as it helps him. This goes straight to Kevis. Nothing is posted to
+          the website without asking you first.</p>
+      </div>
+
+      <div class="advisory-panel">
+        <form class="advisory-form" id="review-form" method="POST" action="https://formspree.io/f/xqpzqdze">
+          <div class="form-row">
+            <label class="field">
+              <span class="field-label">Your name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Sarah M." required>
+            </label>
+            <label class="field">
+              <span class="field-label">City <span class="field-opt">(optional)</span></span>
+              <input type="text" name="city" autocomplete="address-level2" placeholder="Decatur">
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field-label">Tell Kevis about your experience</span>
+            <textarea name="experience" rows="5"
+                      placeholder="What was it like working with him? Buying, selling, the timeline, anything that stood out…"
+                      required></textarea>
+          </label>
+
+          <label class="field">
+            <span class="field-label">Email or phone <span class="field-opt">(optional)</span></span>
+            <input type="text" name="contact" autocomplete="email" placeholder="In case Kevis wants to say thanks — never published.">
+          </label>
+
+          <label class="field field-check">
+            <input type="checkbox" name="consent" value="Yes, may feature on the website">
+            <span>Kevis may feature this on his website, using the name and city I entered above.</span>
+          </label>
+
+          <input type="hidden" name="interest" value="Client review">
+          <input type="hidden" name="_subject" value="New client review from your website">
+          <input class="form-trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button class="btn btn-fill form-submit" type="submit" id="review-submit">Send to Kevis</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="advisory-privacy">Your details go to Kevis and nowhere else unless you check the box above.
+            <a href="privacy.html">How your information is handled</a>.</p>
+        </form>
+      </div>
+
+      <p style="margin-top: 34px;"><a class="doc-back" href="index.html" style="color: var(--always-paper);">← Back to the site</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer section-light">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top: 0; padding-top: 0;">
+      <span>© <span id="year"></span> Kevis Ellison, Linda Blue Real Estate, LLC. All rights reserved.</span>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  var form = document.getElementById("review-form");
+  var status = document.getElementById("form-status");
+  if (form && status && window.fetch && window.FormData) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var button = form.querySelector("[type=submit]");
+      status.className = "form-status";
+      status.textContent = "Sending…";
+      button.disabled = true;
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            status.textContent = "Thank you — this goes straight to Kevis. He really appreciates you taking the time.";
+            return;
+          }
+          return res.json().then(function (data) {
+            throw new Error((data.errors || []).map(function (e) { return e.message; }).join(", ") || "HTTP " + res.status);
+          });
+        })
+        .catch(function (err) {
+          status.className = "form-status is-error";
+          status.textContent = "That didn't go through. Please call (256) 345-4901 or email kevisellison84@gmail.com.";
+          if (window.console) { console.error("review form:", err); }
+        })
+        .then(function () { button.disabled = false; });
+    });
+  }
+})();
+</script>
