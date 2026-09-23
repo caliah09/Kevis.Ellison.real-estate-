@@ -9,6 +9,15 @@
       "side": "Listed",
       "photo": "images/2716-lexington-ave-sw-1-exterior.webp",
       "alt": "2716 Lexington Ave SW, Decatur, AL \u2014 exterior"
+    },
+    {
+      "year": "2026",
+      "address": "211 13th Ave NW",
+      "city": "Decatur, AL",
+      "price": "",
+      "side": "Listed",
+      "photo": "images/211-13th-ave-nw-1.webp",
+      "alt": "211 13th Ave NW, Decatur, AL \u2014 front exterior"
     }
   ]
 }
