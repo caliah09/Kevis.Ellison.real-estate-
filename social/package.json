@@ -1,0 +1,11 @@
+{
+  "name": "kevis-social-posts",
+  "private": true,
+  "description": "Renders Kevis's Sold, Under Contract and Coming Soon posts from posts.json",
+  "scripts": {
+    "render": "node render.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  }
+}

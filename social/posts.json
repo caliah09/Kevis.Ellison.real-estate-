@@ -1,0 +1,53 @@
+{
+  "agent": {
+    "name": "Kevis Ellison",
+    "role": "Realtor · Linda Blue",
+    "phone": "(256) 345-4901",
+    "instagram": "kevisellison_realty",
+    "location": "Decatur, Alabama",
+    "headshot": "images/kevis-ellison.jpeg",
+    "logo": "images/brand/linda-blue-logo-transparent-white.png"
+  },
+  "hashtags": "#DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS",
+  "posts": [
+    {
+      "slug": "sold-306-12th-ave-nw",
+      "status": "sold",
+      "photo": "social/photos/306-12th-ave-nw.webp",
+      "photoPosition": "52% 50%",
+      "subtitle": "Another home sold in Decatur, AL",
+      "address": "306 12th Ave NW",
+      "price": "$95,000",
+      "specs": "3 bd · 2 ba · 1,600 sq ft",
+      "courtesy": null,
+      "caption": "What does $59 a square foot look like in Decatur? 306 12th Ave NW just sold for $95,000, 3 bed, 2 bath, 1,600 square feet. Deals like this don't sit long. Want first look at the next one? Message me and I'll keep you posted before it hits the market.",
+      "extraHashtags": ""
+    },
+    {
+      "slug": "under-contract-1205-thomas-dr",
+      "status": "under-contract",
+      "photo": "images/1205 thomas dr.png",
+      "photoPosition": "50% 50%",
+      "subtitle": "Another home under contract in Decatur, AL",
+      "address": "1205 Thomas Dr SW",
+      "price": "$199,999",
+      "specs": "4 bd · 2 ba · 1,787 sq ft",
+      "courtesy": null,
+      "caption": "Full brick, a huge fenced-in backyard, and under $200,000? Buyers noticed. 1205 Thomas Dr SW is now under contract in Decatur, 4 bed, 2 bath, 1,787 square feet on a 0.4 acre lot. That's the kind of value that moves fast. Want first look at the next one? Message me and I'll keep you posted before it hits the market.",
+      "extraHashtags": ""
+    },
+    {
+      "slug": "under-contract-241-shortleaf-ln",
+      "status": "under-contract",
+      "photo": "social/photos/241-shortleaf-ln.webp",
+      "photoPosition": "50% 50%",
+      "subtitle": "Under contract for my buyers in Harvest, AL",
+      "address": "241 Shortleaf Ln",
+      "price": "$385,000",
+      "specs": "4 bd · 2 ba · 2,238 sq ft",
+      "courtesy": "Listing courtesy of KW Huntsville",
+      "caption": "Nearly an acre in Harvest with its own pond? My buyers said yes. 241 Shortleaf Ln is now under contract, 4 bed, 2 bath, 2,238 square feet on 0.90 acre. That's the kind of space that moves fast. Want first look at the next one? Message me and I'll keep you posted before it hits the market. Listing courtesy of KW Huntsville.",
+      "extraHashtags": "#HarvestAL"
+    }
+  ]
+}
