@@ -31,7 +31,7 @@ Divide the price by the square feet and round to a whole dollar. Check the math 
 ## Before posting
 
 - **Sold** posts go up only after the closing. Until then, call it **under contract**.
-- **Someone else's listing** (for example 241 Shortleaf Ln, which KW Huntsville listed): don't imply Kevis listed it. Say what his role was once it's confirmed, and name the listing brokerage.
+- **Someone else's listing:** don't imply Kevis listed it. Say his role ("my buyers") and end with `Listing courtesy of {brokerage}.` Example: 241 Shortleaf Ln, where Kevis is the buyer's agent and KW Huntsville is the listing brokerage.
 - **Use only facts from the MLS, Zillow or Kevis himself.** Never promise a price, a deal or a result.
 
 ## Posted examples (the standard)
@@ -53,3 +53,7 @@ Divide the price by the square feet and round to a whole dollar. Check the math 
 **1205 Thomas Dr SW, Under contract**
 
 > Full brick, a huge fenced-in backyard, and under $200,000? Buyers noticed. 1205 Thomas Dr SW is now under contract in Decatur, 4 bed, 2 bath, 1,787 square feet on a 0.4 acre lot. That's the kind of value that moves fast. Want first look at the next one? Message me and I'll keep you posted before it hits the market. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS
+
+**241 Shortleaf Ln, Under contract (Kevis is the buyer's agent)**
+
+> Nearly an acre in Harvest with its own pond? My buyers said yes. 241 Shortleaf Ln is now under contract, 4 bed, 2 bath, 2,238 square feet on 0.90 acre. That's the kind of space that moves fast. Want first look at the next one? Message me and I'll keep you posted before it hits the market. Listing courtesy of KW Huntsville. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS #HarvestAL
