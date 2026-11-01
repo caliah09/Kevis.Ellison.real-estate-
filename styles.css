@@ -528,6 +528,7 @@ img { max-width: 100%; display: block; }
 /* External-link arrow, used on the ValleyMLS buttons. */
 .btn-icon { width: 14px; height: 14px; flex: none; }
 .btn-lg { padding: 19px 38px; font-size: 0.92rem; }
+@media (max-width: 420px) { .btn-lg { padding: 17px 20px; font-size: 0.84rem; max-width: 100%; white-space: normal; justify-content: center; text-align: center; } }
 .props-cta-text {
   max-width: 46ch; margin: 0 auto 26px;
   font-size: 1.02rem; color: var(--muted); line-height: 1.7;
