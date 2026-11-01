@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kevis October Social Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --page: #EEF1F5;
+  --card: #FFFFFF;
+  --ink: #16191F;
+  --ink-2: #4A5160;
+  --ink-3: #6B7280;
+  --line: rgba(22, 25, 31, 0.10);
+  --track: #E6E9EF;
+  --accent: #2A78D6;
+  --good: #16A06A;
+  --navy: #1E2A3B;
+  --gold: #E9A21B;
+  --wash: linear-gradient(135deg, #EAF2FD 0%, #F3F6FC 55%, #E7EEFB 100%);
+  --fb: #2A78D6;
+  --ig: #EB6834;
+  --shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 1px 3px rgba(16, 24, 40, .06);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #0F1217; --card: #181C23; --ink: #EEF0F3; --ink-2: #B6BDC9; --ink-3: #8C94A3;
+    --line: rgba(238, 240, 243, 0.10); --track: #262C36; --accent: #3987E5; --good: #3CB884;
+    --navy: #C9D4E5; --gold: #C98500;
+    --wash: linear-gradient(135deg, #17233A 0%, #161C27 55%, #1A2438 100%);
+    --fb: #3987E5; --ig: #D95926; --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0F1217; --card: #181C23; --ink: #EEF0F3; --ink-2: #B6BDC9; --ink-3: #8C94A3;
+  --line: rgba(238, 240, 243, 0.10); --track: #262C36; --accent: #3987E5; --good: #3CB884;
+  --navy: #C9D4E5; --gold: #C98500;
+  --wash: linear-gradient(135deg, #17233A 0%, #161C27 55%, #1A2438 100%);
+  --fb: #3987E5; --ig: #D95926; --shadow: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 400 14px/1.55 "Inter", -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 16px; padding-block: 18px 40px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.card { background: var(--card); border-radius: 8px; box-shadow: var(--shadow); padding: 20px 22px; min-width: 0; }
+.s1 { grid-column: span 1; } .s2 { grid-column: span 2; } .s3 { grid-column: span 3; } .s4 { grid-column: span 4; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h3 { font-size: 15px; font-weight: 700; }
+.muted { color: var(--ink-3); }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* cover + date */
+.cover { background: var(--wash); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 230px; }
+.cover .who { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.cover h1 { font-size: clamp(26px, 3.6vw, 34px); line-height: 1.15; font-weight: 700; margin: 10px 0 6px; }
+.cover h1 span { color: var(--accent); }
+.cover p { margin: 0; color: var(--ink-2); }
+.date h3 { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
+.date .row { font-size: 13px; color: var(--ink-2); }
+.date .row b { color: var(--ink); font-weight: 600; }
+.plats { display: flex; gap: 8px; margin-top: 22px; }
+.plat { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; color: #fff; }
+.plat svg { width: 16px; height: 16px; fill: currentColor; }
+.plat.fb { background: var(--fb); } .plat.ig { background: var(--ig); }
+.badge { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 600; color: var(--good); background: color-mix(in srgb, var(--good) 12%, transparent); padding: 4px 9px; border-radius: 999px; }
+
+/* category separator */
+.sep { background: var(--wash); display: flex; align-items: center; justify-content: center; text-align: center; min-height: 200px; }
+.sep h2 { font-size: 22px; line-height: 1.25; font-weight: 600; }
+.sep h2 span { color: var(--accent); }
+
+/* KPI progress */
+.kpi { display: grid; gap: 14px; margin-top: 14px; }
+.kpi .top { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.kpi .top span:last-child { color: var(--ink-2); font-weight: 500; white-space: nowrap; }
+.kpi .top em { font-style: normal; color: var(--ink-3); }
+.track { height: 10px; background: var(--track); border-radius: 999px; overflow: hidden; }
+.fill { height: 100%; background: var(--accent); border-radius: 999px; min-width: 6px; }
+.fill.zero { background: transparent; min-width: 0; }
+.foot { display: flex; justify-content: space-between; margin-top: 14px; font-size: 12px; color: var(--ink-3); }
+
+/* stat tiles */
+.stat { display: flex; align-items: center; gap: 16px; }
+.ico { width: 46px; height: 46px; border-radius: 12px; background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); display: grid; place-items: center; flex: none; }
+.ico svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.stat .k { font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.stat .v { font-size: 28px; font-weight: 700; line-height: 1.1; margin-top: 2px; }
+.stat .d { font-size: 12px; color: var(--ink-3); margin-top: 3px; }
+.up { color: var(--good); font-weight: 600; }
+
+/* summary */
+.summary h2 { font-size: 34px; font-weight: 800; letter-spacing: -0.01em; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.summary h3 { font-size: 17px; font-weight: 600; margin: 16px 0 8px; }
+.summary ul { margin: 0; padding-left: 18px; display: grid; gap: 7px; color: var(--ink-2); }
+.summary ul b { color: var(--ink); font-weight: 600; }
+
+/* section header */
+.section { text-align: center; padding: 26px 20px; }
+.section h2 { font-size: 22px; font-weight: 700; }
+.section p { margin: 4px 0 0; color: var(--ink-2); }
+
+/* small-multiple bars: Facebook vs Instagram, one scale per metric */
+.legend { display: flex; gap: 16px; font-size: 12px; color: var(--ink-2); margin: 8px 0 14px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.sm { display: grid; gap: 14px; }
+.sm .m { font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+.bars { display: grid; gap: 2px; }
+.brow { display: grid; grid-template-columns: 1fr 64px; align-items: center; gap: 8px; }
+.bar { height: 12px; border-radius: 0 4px 4px 0; min-width: 2px; cursor: default; }
+.bar.fb { background: var(--fb); } .bar.ig { background: var(--ig); }
+.bval { font-size: 12px; color: var(--ink-2); text-align: right; }
+.note { font-size: 12px; color: var(--ink-3); margin-top: 14px; }
+
+/* table */
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 420px; margin-top: 12px; }
+th { text-align: left; font-weight: 600; padding: 8px 10px; border-bottom: 2px solid var(--accent); }
+td { padding: 11px 10px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+th:not(:first-child), td:not(:first-child) { text-align: right; }
+td .src { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+td .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+td.na { color: var(--ink-3); font-style: italic; }
+.stack { display: grid; gap: 10px; }
+
+/* funnel */
+.funnel { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: center; margin-top: 12px; }
+.fl { display: grid; gap: 12px; }
+.fl div { display: grid; grid-template-columns: 12px 1fr auto; gap: 8px; align-items: center; font-size: 13.5px; font-weight: 600; }
+.fl i { width: 9px; height: 9px; border-radius: 50%; }
+.fl span:last-child { font-weight: 500; color: var(--ink-2); }
+.cone { display: grid; justify-items: center; gap: 4px; }
+.cone div { height: 40px; clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%); }
+.c1 { width: 100%; background: var(--navy); } .c2 { width: 76%; background: var(--accent); } .c3 { width: 54%; height: 16px !important; background: var(--gold); }
+
+/* plan + schedule */
+.plan { margin: 12px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+.plan li { background: var(--page); border-radius: 8px; padding: 14px; }
+.plan .n { width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+.plan b { display: block; font-size: 13.5px; margin-bottom: 4px; }
+.plan span { font-size: 12.5px; color: var(--ink-2); }
+.sched { margin-top: 10px; }
+.sched div { display: grid; grid-template-columns: 112px 1fr auto; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; align-items: baseline; }
+.sched div:last-child { border-bottom: 0; }
+.sched .w { font-weight: 600; }
+.pill { font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+.pill.sold { background: color-mix(in srgb, #E34948 14%, transparent); color: #C23A39; }
+.pill.uc { background: color-mix(in srgb, var(--gold) 18%, transparent); color: #A06A00; }
+.pill.cs { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+:root[data-theme="dark"] .pill.sold { color: #F08A89; } :root[data-theme="dark"] .pill.uc { color: #F0BE5C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pill.sold { color: #F08A89; } :root:not([data-theme="light"]) .pill.uc { color: #F0BE5C; } }
+.targetnote { font-size: 12px; color: var(--ink-3); margin-top: 6px; }
+footer { text-align: center; font-size: 12px; color: var(--ink-3); margin-top: 16px; }
+
+/* tooltip */
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--ink); color: var(--card); font-size: 12px; padding: 6px 9px; border-radius: 6px; white-space: nowrap; opacity: 0; transition: opacity .1s; }
+.tip b { font-weight: 600; }
+
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .s3, .s4 { grid-column: span 2; }
+  .s2 { grid-column: span 2; }
+}
+@media (max-width: 520px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .s1, .s2, .s3, .s4 { grid-column: auto; }
+  .funnel { grid-template-columns: 1fr; }
+  .sched div { grid-template-columns: 1fr auto; }
+  .sched .w { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <div class="grid">
+
+    <section class="card s3 cover">
+      <div class="who">PrimeReach Digital &middot; Monthly social report</div>
+      <h1>Kevis Ellison: <span>October 2026</span></h1>
+      <p>Realtor with Linda Blue Real Estate &middot; Facebook and Instagram</p>
+    </section>
+
+    <section class="card s1 date">
+      <h3>Date period</h3>
+      <div class="row tnum"><b>2026-10-02 to 2026-10-31</b></div>
+      <div class="row">Duration: 30 days</div>
+      <span class="badge">All organic &middot; $0 ad spend</span>
+      <div class="plats" aria-label="Platforms: Facebook and Instagram">
+        <span class="plat fb" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg></span>
+        <span class="plat ig" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2zm0 7.9a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zM17.1 5.8a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM20.9 7.3c-.1-1.5-.4-2.8-1.5-3.9S17.1 2 15.6 1.9c-1.5-.1-6-.1-7.5 0-1.5.1-2.8.4-3.9 1.5S2.8 5.8 2.7 7.3c-.1 1.5-.1 6 0 7.5.1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 6 .1 7.5 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-6 0-7.5zm-2 9.1a3.1 3.1 0 0 1-1.7 1.7c-1.2.5-4 .4-5.2.4s-4.1.1-5.2-.4a3.1 3.1 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.3s-.1-4.1.4-5.2A3.1 3.1 0 0 1 6.8 4.2c1.2-.5 4-.4 5.2-.4s4.1-.1 5.2.4a3.1 3.1 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.2s.1 4.1-.4 5.3z"/></svg></span>
+      </div>
+    </section>
+
+    <section class="card s1 sep"><h2>Executive<br><span>summary</span></h2></section>
+
+    <section class="card s3" aria-labelledby="kpi-t">
+      <h3 id="kpi-t">November goals: where October leaves us</h3>
+      <div class="kpi">
+        <div><div class="top"><span>Facebook people reached</span><span class="tnum">456 / 1,000 <em>(46%)</em></span></div>
+          <div class="track"><div class="fill" style="width:45.6%" data-tip="<b>Facebook people reached</b><br>October 456 &middot; November goal 1,000"></div></div></div>
+        <div><div class="top"><span>Instagram accounts reached</span><span class="tnum">1 / 150 <em>(1%)</em></span></div>
+          <div class="track"><div class="fill" style="width:0.7%" data-tip="<b>Instagram accounts reached</b><br>October 1 &middot; November goal 150"></div></div></div>
+        <div><div class="top"><span>New followers, both platforms</span><span class="tnum">8 / 25 <em>(32%)</em></span></div>
+          <div class="track"><div class="fill" style="width:32%" data-tip="<b>New followers</b><br>October 8 &middot; November goal 25"></div></div></div>
+        <div><div class="top"><span>Message conversations</span><span class="tnum">0 / 3 <em>(0%)</em></span></div>
+          <div class="track"><div class="fill zero" style="width:0"></div></div></div>
+      </div>
+      <div class="foot"><span>Bars show October's result against the November goal.</span><span>Goals are PrimeReach's suggestions, not guarantees.</span></div>
+    </section>
+
+    <section class="card s1 stat">
+      <span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M18 8v6M15 11h6"/></svg></span>
+      <div><div class="k">People reached</div><div class="v tnum">456</div><div class="d">Facebook &middot; <span class="up">&#9650; 4,500%</span></div></div>
+    </section>
+    <section class="card s1 stat">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <div><div class="k">Views</div><div class="v tnum">1,700</div><div class="d">Facebook &middot; <span class="up">&#9650; 770%</span></div></div>
+    </section>
+    <section class="card s1 stat">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M5 3l14 7-6.2 1.8L10.5 18z"/><path d="M13 12l5 5"/></svg></span>
+      <div><div class="k">Page visits</div><div class="v tnum">87</div><div class="d">Facebook &middot; <span class="up">&#9650; 10%</span></div></div>
+    </section>
+    <section class="card s1 stat">
+      <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.3 7.6 3.7 4 7.2 4c2 0 3.6 1.1 4.8 2.8C13.2 5.1 14.8 4 16.8 4c3.5 0 5.9 3.6 4.5 7.3-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg></span>
+      <div><div class="k">New followers</div><div class="v tnum">8</div><div class="d">Facebook &middot; <span class="up">&#9650; 300%</span></div></div>
+    </section>
+
+    <section class="card s2" aria-labelledby="sm-t">
+      <h3 id="sm-t">Facebook vs Instagram</h3>
+      <div class="legend"><span><i style="background:var(--fb)"></i>Facebook</span><span><i style="background:var(--ig)"></i>Instagram</span></div>
+      <div class="sm" id="sm"></div>
+      <p class="note">Each metric has its own scale, so compare the two bars within a row, not across rows. Exact numbers are in the table below.</p>
+    </section>
+
+    <section class="card s2 summary">
+      <h2>Social summary</h2>
+      <h3>Facebook works. Instagram hasn't started.</h3>
+      <ul>
+        <li><b>Facebook took off on Oct 30&ndash;31.</b> The 211 13th Ave NW Sold and 1205 Thomas Dr posts reached 456 people and drove 87 page visits and 8 follows.</li>
+        <li><b>Captions are landing.</b> 51 interactions from 456 people is about 11%, well above what local real estate pages usually see.</li>
+        <li><b>Instagram reached 1 account all month.</b> Nothing new was posted there after about Oct 10.</li>
+        <li><b>No messages yet.</b> Instagram shows 0 conversations, and Facebook messages haven't been checked. Turning page visits into messages is November's main job.</li>
+      </ul>
+    </section>
+
+    <section class="card s4 section"><h2>Results</h2><p>How each platform performed, Oct 2&ndash;31</p></section>
+
+    <section class="card s2" aria-labelledby="tbl-t">
+      <h3 id="tbl-t">Channels overview</h3>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th scope="col">Metric</th><th scope="col">Facebook</th><th scope="col">Instagram</th></tr></thead>
+          <tbody>
+            <tr><td>Views</td><td>1,700</td><td>9</td></tr>
+            <tr><td>People reached</td><td>456</td><td>1</td></tr>
+            <tr><td>Interactions</td><td>51</td><td>3</td></tr>
+            <tr><td>Profile visits</td><td>87</td><td>2</td></tr>
+            <tr><td>New followers</td><td>8</td><td class="na">None</td></tr>
+            <tr><td>Link clicks</td><td>2</td><td>0</td></tr>
+            <tr><td>Message conversations</td><td class="na">Not checked</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Changes vs September: Facebook views &#9650;770%, reach &#9650;4,500%, interactions &#9650;292%. Instagram views &#9660;79%, reach &#9660;86%. September was near zero, so treat October as the baseline.</p>
+    </section>
+
+    <div class="s2 stack">
+      <section class="card stat">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M20.7 16.2A9 9 0 1 0 17 19.9l3.8 1.1z"/></svg></span>
+        <div><div class="k">Interactions</div><div class="v tnum">51</div><div class="d">Facebook likes, comments and shares</div></div>
+      </section>
+      <section class="card stat">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+        <div><div class="k">Link clicks</div><div class="v tnum">2</div><div class="d">Expected: captions ask for a message, not a click</div></div>
+      </section>
+      <section class="card stat">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg></span>
+        <div><div class="k">Message conversations</div><div class="v tnum">0</div><div class="d">Instagram &middot; Facebook not checked yet</div></div>
+      </section>
+    </div>
+
+    <section class="card s2" aria-labelledby="fn-t">
+      <h3 id="fn-t">Facebook funnel</h3>
+      <div class="funnel">
+        <div class="fl">
+          <div><i style="background:var(--navy)"></i><span>People reached</span><span class="tnum">456 (100%)</span></div>
+          <div><i style="background:var(--accent)"></i><span>Page visits</span><span class="tnum">87 (19%)</span></div>
+          <div><i style="background:var(--gold)"></i><span>New followers</span><span class="tnum">8 (2%)</span></div>
+        </div>
+        <div class="cone" aria-hidden="true"><div class="c1"></div><div class="c2"></div><div class="c3"></div></div>
+      </div>
+      <p class="note">About 1 in 5 people who saw a post visited Kevis's page, and 1 in 11 visitors followed. The weak step is visitors becoming followers and messages.</p>
+    </section>
+
+    <section class="card s2" aria-labelledby="sc-t">
+      <h3 id="sc-t">Posting schedule</h3>
+      <div class="sched">
+        <div><span class="w tnum">Sun, Nov 1</span><span>306 12th Ave NW, $95,000</span><span class="pill sold">Sold</span></div>
+        <div><span class="w tnum">Tue&ndash;Wed, Nov 3&ndash;4</span><span>1205 Thomas Dr SW, $199,999</span><span class="pill uc">Under contract</span></div>
+        <div><span class="w tnum">Fri&ndash;Sat, Nov 6&ndash;7</span><span>241 Shortleaf Ln, Harvest (Kevis's buyers)</span><span class="pill uc">Under contract</span></div>
+        <div><span class="w">When the photo is ready</span><span>1612 4th Ave SW</span><span class="pill cs">Coming soon</span></div>
+      </div>
+    </section>
+
+    <section class="card s4" aria-labelledby="pl-t">
+      <h3 id="pl-t">November plan</h3>
+      <ol class="plan">
+        <li><span class="n">1</span><b>Post on both platforms</b><span>3&ndash;4 times a week. Tick Facebook and Instagram in the composer and tag Decatur, AL.</span></li>
+        <li><span class="n">2</span><b>Space out the ready posts</b><span>306, 1205 and 241 go up 2&ndash;3 days apart, not all at once.</span></li>
+        <li><span class="n">3</span><b>One Reel a week</b><span>A 10&ndash;15 second pan or walkthrough to reach people who don't follow yet.</span></li>
+        <li><span class="n">4</span><b>Turn visitors into messages</b><span>"Send message" as the page button, pin the 306 Sold post, and invite people who reacted to follow.</span></li>
+        <li><span class="n">5</span><b>Boost the winner</b><span>About $5 a day on whichever new post leads after a day or two, from the $150 test budget.</span></li>
+      </ol>
+    </section>
+
+  </div>
+  <footer>Prepared by PrimeReach Digital &middot; Data from Meta Business Suite, Oct 2&ndash;31, 2026 &middot; hello@primereachmktg.com</footer>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(function () {
+  var rows = [
+    ['Views', 1700, 9, '&#9650;770%', '&#9660;79%'],
+    ['People reached', 456, 1, '&#9650;4,500%', '&#9660;86%'],
+    ['Interactions', 51, 3, '&#9650;292%', 'No change'],
+    ['Profile visits', 87, 2, '&#9650;10%', '&#9660;86%'],
+    ['New followers', 8, 0, '&#9650;300%', 'None recorded'],
+    ['Link clicks', 2, 0, 'No change', 'No change']
+  ];
+  var sm = document.getElementById('sm');
+  rows.forEach(function (r) {
+    var max = Math.max(r[1], r[2]) || 1;
+    var block = document.createElement('div');
+    var html = '<div class="m">' + r[0] + '</div><div class="bars">';
+    [['fb', 'Facebook', r[1], r[3]], ['ig', 'Instagram', r[2], r[4]]].forEach(function (s) {
+      var w = s[2] ? Math.max(1.2, s[2] / max * 100) : 0;
+      html += '<div class="brow"><div class="bar ' + s[0] + '" style="width:' + w + '%" data-tip="<b>' + r[0] + ', ' + s[1] + '</b><br>' + s[2].toLocaleString('en-US') + ' &middot; ' + s[3] + ' vs Sep"></div>' +
+              '<span class="bval tnum">' + s[2].toLocaleString('en-US') + '</span></div>';
+    });
+    block.innerHTML = html + '</div>';
+    sm.appendChild(block);
+  });
+
+  var tip = document.getElementById('tip');
+  function move(e) {
+    var x = e.clientX + 14, y = e.clientY + 14;
+    if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 14;
+    tip.style.left = x + 'px'; tip.style.top = y + 'px';
+  }
+  document.addEventListener('mouseover', function (e) {
+    var t = e.target.closest('[data-tip]');
+    if (!t) return;
+    tip.innerHTML = t.getAttribute('data-tip'); tip.style.opacity = '1'; move(e);
+  });
+  document.addEventListener('mousemove', function (e) { if (tip.style.opacity === '1') move(e); });
+  document.addEventListener('mouseout', function (e) { if (e.target.closest('[data-tip]')) tip.style.opacity = '0'; });
+})();
+</script>
+
+</body>
+</html>
