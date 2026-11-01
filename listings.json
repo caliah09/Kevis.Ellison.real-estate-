@@ -1,6 +1,24 @@
 {
   "listings": [
     {
+      "price": "",
+      "address": "241 Shortleaf Lane",
+      "city": "Harvest, AL",
+      "status": "Under Contract",
+      "specs": [],
+      "art": "house",
+      "alt": "241 Shortleaf Lane, Harvest, AL"
+    },
+    {
+      "price": "",
+      "address": "1612 4th Ave SW",
+      "city": "Decatur, AL",
+      "status": "Coming Soon",
+      "specs": [],
+      "art": "house",
+      "alt": "1612 4th Ave SW, Decatur, AL"
+    },
+    {
       "price": "$199,999",
       "address": "1205 Thomas Dr SW",
       "city": "Decatur, AL",

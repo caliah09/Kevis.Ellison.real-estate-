@@ -3,6 +3,15 @@
   "transactions": [
     {
       "year": "2026",
+      "address": "306 12th Ave NW",
+      "city": "Decatur, AL",
+      "price": "$95,000",
+      "side": "Listed",
+      "photo": "images/306-12th-ave-nw-1-exterior.webp",
+      "alt": "306 12th Ave NW, Decatur, AL — front exterior"
+    },
+    {
+      "year": "2026",
       "address": "2716 Lexington Ave SW",
       "city": "Decatur, AL",
       "price": "",
