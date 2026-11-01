@@ -21,7 +21,24 @@
       "specs": "3 bd · 2 ba · 1,600 sq ft",
       "courtesy": null,
       "caption": "What does $59 a square foot look like in Decatur? 306 12th Ave NW just sold for $95,000, 3 bed, 2 bath, 1,600 square feet. Deals like this don't sit long. Want first look at the next one? Message me and I'll keep you posted before it hits the market.",
-      "extraHashtags": ""
+      "extraHashtags": "",
+      "type": "listing",
+      "date": "2026-11-01"
+    },
+    {
+      "slug": "tip-2026-11-02-20-percent-down",
+      "type": "tip",
+      "date": "2026-11-02",
+      "ribbon": "TIP",
+      "headline": "You don't need 20% down to buy a home.",
+      "points": [
+        "FHA loans can start at 3.5% down with a 580 credit score.",
+        "Eligible veterans can buy with 0% down on a VA loan.",
+        "Alabama has down payment help for qualified buyers."
+      ],
+      "footnote": "Every situation is different. Ask a lender what you qualify for.",
+      "caption": "Think you need 20% down to buy a house? You don't. FHA loans can start at 3.5% down with a 580 credit score, eligible veterans can buy with 0% down on a VA loan, and Alabama has down payment help for qualified buyers. The first step is a quick conversation. Message me and I'll connect you with a lender to see what you qualify for.",
+      "extraHashtags": "#FirstTimeHomeBuyer"
     },
     {
       "slug": "under-contract-1205-thomas-dr",
@@ -34,6 +51,20 @@
       "specs": "4 bd · 2 ba · 1,787 sq ft",
       "courtesy": null,
       "caption": "Full brick, a huge fenced-in backyard, and under $200,000? Buyers noticed. 1205 Thomas Dr SW is now under contract in Decatur, 4 bed, 2 bath, 1,787 square feet on a 0.4 acre lot. That's the kind of value that moves fast. Want first look at the next one? Message me and I'll keep you posted before it hits the market.",
+      "extraHashtags": "",
+      "type": "listing",
+      "date": "2026-11-04"
+    },
+    {
+      "slug": "meet-kevis-2026-11-06",
+      "type": "photo",
+      "date": "2026-11-06",
+      "ribbon": "MEET KEVIS",
+      "photo": "images/kevis-ellison.jpeg",
+      "photoPosition": "50% 30%",
+      "headline": "Hi, I'm Kevis.",
+      "subtitle": "Realtor with Linda Blue Real Estate, serving Morgan, Madison, Lawrence and Lauderdale counties.",
+      "caption": "If you just found my page, hi, I'm Kevis. I'm a Realtor with Linda Blue Real Estate, helping buyers and sellers across Morgan, Madison, Lawrence and Lauderdale counties. First home, next home, or selling the one you're in, I'll walk you through it from the first showing to closing day. Message me anytime or call (256) 345-4901.",
       "extraHashtags": ""
     },
     {
@@ -47,7 +78,141 @@
       "specs": "4 bd · 2 ba · 2,238 sq ft",
       "courtesy": "Listing courtesy of KW Huntsville",
       "caption": "Nearly an acre in Harvest with its own pond? My buyers said yes. 241 Shortleaf Ln is now under contract, 4 bed, 2 bath, 2,238 square feet on 0.90 acre. That's the kind of space that moves fast. Want first look at the next one? Message me and I'll keep you posted before it hits the market. Listing courtesy of KW Huntsville.",
+      "extraHashtags": "#HarvestAL",
+      "type": "listing",
+      "date": "2026-11-07"
+    },
+    {
+      "slug": "tip-2026-11-09-closing-costs",
+      "type": "tip",
+      "date": "2026-11-09",
+      "ribbon": "TIP",
+      "headline": "What closing costs actually are.",
+      "points": [
+        "Usually about 2% to 5% of the loan amount.",
+        "They cover the appraisal, title work, lender fees and prepaid taxes and insurance.",
+        "Sellers can sometimes help pay them, and your offer is where you ask."
+      ],
+      "footnote": "Your lender gives you the exact numbers up front.",
+      "caption": "Closing costs catch a lot of buyers off guard, so here's the short version. They're usually about 2% to 5% of the loan amount and cover things like the appraisal, title work, lender fees and prepaid taxes and insurance. The good news: sellers can sometimes help pay them, and your offer is where you ask. Want to know what yours could look like? Message me.",
+      "extraHashtags": "#FirstTimeHomeBuyer"
+    },
+    {
+      "slug": "veterans-day-2026-11-11",
+      "type": "tip",
+      "date": "2026-11-11",
+      "ribbon": "VETERANS DAY",
+      "headline": "Thank you to every veteran.",
+      "points": [
+        "VA loans let eligible veterans buy with 0% down.",
+        "No private mortgage insurance on a VA loan.",
+        "I'm happy to walk any veteran through the process."
+      ],
+      "footnote": "",
+      "caption": "Thank you to every veteran in Decatur and across North Alabama for your service. If you've earned VA benefits, you may be able to buy a home with 0% down and no private mortgage insurance. If you're thinking about it, I'd be honored to walk you through the process. Message me anytime.",
+      "extraHashtags": "#VeteransDay #VALoan"
+    },
+    {
+      "slug": "tip-2026-11-18-fixes-before-listing",
+      "type": "tip",
+      "date": "2026-11-18",
+      "ribbon": "SELLER TIP",
+      "headline": "3 fixes worth doing before you list.",
+      "points": [
+        "Small repairs buyers notice: leaky faucets, loose handles, burnt-out bulbs.",
+        "Fresh neutral paint where walls are scuffed.",
+        "Curb appeal: trim, mulch and a clean front door."
+      ],
+      "footnote": "Skip big remodels. They rarely pay for themselves.",
+      "caption": "Thinking about selling? You don't need a big remodel to make a great first impression. Fix the small things buyers notice, like leaky faucets and burnt-out bulbs, freshen up scuffed walls with neutral paint, and give the front of the house some love. Want a walkthrough of what's worth doing for your home? Message me.",
+      "extraHashtags": ""
+    },
+    {
+      "slug": "track-record-2026-11-20",
+      "type": "list",
+      "date": "2026-11-20",
+      "ribbon": "TRACK RECORD",
+      "headline": "2026 so far.",
+      "rows": [
+        {
+          "title": "2716 Lexington Ave SW",
+          "sub": "Decatur · Listed",
+          "value": "$269,000",
+          "tag": "Sold"
+        },
+        {
+          "title": "211 13th Ave NW",
+          "sub": "Decatur · Listed",
+          "value": "$140,000",
+          "tag": "Sold"
+        },
+        {
+          "title": "306 12th Ave NW",
+          "sub": "Decatur · Listed",
+          "value": "$95,000",
+          "tag": "Sold"
+        },
+        {
+          "title": "1205 Thomas Dr SW",
+          "sub": "Decatur · Listed",
+          "tag": "Under contract",
+          "tagStyle": "outline"
+        },
+        {
+          "title": "241 Shortleaf Ln",
+          "sub": "Harvest · My buyers",
+          "tag": "Under contract",
+          "tagStyle": "outline"
+        }
+      ],
+      "footnote": "",
+      "caption": "2026 so far: three homes sold and two more under contract, from Decatur to Harvest. Thank you to every client who trusted me with one of the biggest decisions of their life. Want to be next? Message me and let's talk about your plans for 2027.",
       "extraHashtags": "#HarvestAL"
+    },
+    {
+      "slug": "ask-me-anything-2026-11-23",
+      "type": "tip",
+      "date": "2026-11-23",
+      "ribbon": "Q&A",
+      "headline": "Ask me anything about buying or selling.",
+      "points": [
+        "Drop your question in the comments.",
+        "No question is too small.",
+        "I'll answer the best ones this week."
+      ],
+      "footnote": "",
+      "caption": "Ask me anything. Rates, down payments, what your home might sell for, how the process works, no question is too small. Drop it in the comments or send me a message and I'll answer the best ones this week.",
+      "extraHashtags": ""
+    },
+    {
+      "slug": "thanksgiving-2026-11-26",
+      "type": "tip",
+      "date": "2026-11-26",
+      "ribbon": "THANKSGIVING",
+      "headline": "Thankful for you, Decatur.",
+      "points": [
+        "To my clients, thank you for trusting me with such a big decision.",
+        "To Linda Blue Real Estate, thank you for the support.",
+        "To everyone who follows along, thank you."
+      ],
+      "footnote": "",
+      "caption": "Happy Thanksgiving from my family to yours. I'm thankful for every client who trusted me this year, for the team at Linda Blue Real Estate, and for everyone in Decatur who follows along and sends people my way. Enjoy the day.",
+      "extraHashtags": ""
+    },
+    {
+      "slug": "tip-2026-11-30-selling-in-2027",
+      "type": "tip",
+      "date": "2026-11-30",
+      "ribbon": "SELLER TIP",
+      "headline": "Thinking about selling in 2027?",
+      "points": [
+        "Start with a conversation about what your home could sell for.",
+        "Make a short list of repairs now, while there's time.",
+        "Many buyers start shopping right after the holidays."
+      ],
+      "footnote": "",
+      "caption": "Thinking about selling in 2027? The best time to plan is now. Start with a conversation about what your home could sell for, make a short list of repairs while there's time, and be ready, because many buyers start shopping right after the holidays. Message me and let's make a plan.",
+      "extraHashtags": ""
     }
   ]
 }

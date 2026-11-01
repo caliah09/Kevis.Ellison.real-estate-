@@ -1,9 +1,13 @@
 # Social post template
 
-Makes Kevis's Sold, Under Contract and Coming Soon posts, all in the same design:
+Makes Kevis's listing posts and his filler posts (tips, holidays, track record, Meet Kevis). The month's plan is in [`calendar-2026-11.md`](calendar-2026-11.md).
+
+Listing posts (Sold, Under Contract and Coming Soon) all use the same design:
 - The full listing photo, with a red diagonal status ribbon in the corner and big status lettering in the sky.
 - Kevis's headshot, name and phone along the bottom left, and the address, price and details along the bottom right.
 - The Linda Blue logo in the top right.
+
+Filler posts are simpler: a small label in the top left (like `TIP` or `VETERANS DAY`) instead of the red ribbon, a headline, and Kevis's headshot and phone along the bottom. The ribbon is only for listings.
 
 Every post produces two images:
 
@@ -26,7 +30,20 @@ Captions follow [`../CAPTIONS.md`](../CAPTIONS.md).
    - `address`, `price`, `specs`: shown on the post. Use only verified facts.
    - `courtesy`: for another brokerage's listing, like `Listing courtesy of KW Huntsville`. Otherwise `null`.
    - `caption` and `extraHashtags`: used in the Instagram preview. The five standard hashtags are added automatically.
+   - `date`: the day it goes up, like `2026-11-01`. Keep `posts.json` in date order.
 3. **Render it** (see below), then check both images before sending.
+
+## Make a filler post
+
+Set `type` and fill in these fields, plus `slug`, `date`, `caption` and `extraHashtags`:
+
+| `type` | What it is | Fields |
+|---|---|---|
+| `tip` | Tips, holidays, Q&A | `ribbon` (the label text), `headline`, `points` (1 to 3 short lines), `footnote` (optional) |
+| `list` | Track record, market snapshot | `ribbon`, `headline`, `rows` (1 to 5), `footnote` (optional). Each row has `title`, `sub`, and optionally `value` (a price) and `tag` (like `Sold`). Add `"tagStyle": "outline"` for a lighter tag, like `Under contract`. |
+| `photo` | Meet Kevis, local spots | `ribbon`, `photo`, `photoPosition`, `headline`, `subtitle` |
+
+Use only facts you can back up. Tips should be general and point people to a lender for their own numbers.
 
 ## Render
 

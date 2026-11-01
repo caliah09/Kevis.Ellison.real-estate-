@@ -1,6 +1,12 @@
 /**
  * Renders Kevis's social posts from posts.json.
  *
+ * Post types (the "type" field, default "listing"):
+ *   listing   Sold / Under Contract / Coming Soon over the listing photo
+ *   tip       text card: a headline and up to 3 numbered points (tips, holidays, Q&A)
+ *   list      text card: a headline and rows, for track records and market snapshots
+ *   photo     any photo with a label, headline and subtitle (Meet Kevis, local spots)
+ *
  * For each post it writes two files to social/out/:
  *   <slug>.png             the 1080x1080 image to upload
  *   <slug>-instagram.png   a phone preview with the caption, to send for approval
@@ -47,6 +53,7 @@ body{background:#fff}
 .ribbon::before{top:3px}.ribbon::after{bottom:3px}
 .r1{left:-53px;top:28px;width:200px;padding:7px 0;font-size:17px;letter-spacing:.24em}
 .r2{left:-68px;top:46px;width:260px;padding:7px 0;font-size:10.5px;letter-spacing:.16em}
+.label{position:absolute;top:20px;left:22px;z-index:3;font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#0B0B0B;background:#F5F4F0;padding:6px 11px;border-radius:2px}
 .logo{position:absolute;top:18px;right:18px;width:86px;opacity:.82;z-index:3}
 .logo img{width:100%;display:block}
 .big{position:absolute;left:0;right:0;top:30px;text-align:center;z-index:2}
@@ -66,9 +73,76 @@ body{background:#fff}
 .det .lc{margin-top:3px;font-size:6.5px;font-weight:500;letter-spacing:.06em;color:#B5B5B5}
 .rule{position:absolute;right:16px;bottom:72px;width:30px;height:2px;background:#D0161E;z-index:2}
 .rule.tall{bottom:82px}
+/* text cards (tip, list) */
+.t.card{background:#0E0E0E}
+.t.card::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 70% at 100% 0%,rgba(208,22,30,.16) 0%,rgba(208,22,30,0) 55%);pointer-events:none}
+.body{position:absolute;left:24px;right:24px;top:72px;z-index:2}
+.body h2{font-weight:900;font-size:28px;line-height:1.02;letter-spacing:-.01em}
+.body .bar{width:34px;height:3px;background:#D0161E;margin:14px 0 14px}
+.t.card .body.list .bar{margin:10px 0 8px}
+.t.card .body.list{top:66px}
+.pts{list-style:none;display:grid;gap:10px}
+.pts li{display:grid;grid-template-columns:22px 1fr;gap:6px;font-size:12px;line-height:1.4;color:#E4E4E4}
+.pts li b{color:#D0161E;font-weight:800;font-size:13px}
+.rows{display:grid}
+.rows .row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:5px 0;border-bottom:1px solid #2A2A2A}
+.rows .row:first-child{border-top:1px solid #2A2A2A}
+.rows .a{font-size:12.5px;font-weight:700}
+.rows .s{font-size:8.5px;color:#A9A9A9;margin-top:1px;letter-spacing:.03em}
+.rows .r{display:flex;align-items:center;gap:7px}
+.rows .p{font-size:12.5px;font-weight:800}
+.tag{display:inline-block;font-size:7px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:3px 6px;border-radius:2px}
+.tag.red{background:#D0161E;color:#fff}.tag.out{border:1px solid #9A9A9A;color:#E4E4E4}
+.foot{position:absolute;right:18px;bottom:22px;font-size:8px;color:#9A9A9A;text-align:right;max-width:130px;z-index:2}
+/* photo posts */
+.t.photo .shade{background:linear-gradient(to bottom,rgba(8,8,8,.55) 0%,rgba(8,8,8,.15) 22%,rgba(8,8,8,0) 38%),linear-gradient(to top,rgba(8,8,8,.9) 0%,rgba(8,8,8,.55) 26%,rgba(8,8,8,0) 50%)}
+.ptext{position:absolute;left:22px;right:22px;bottom:40px;z-index:2}
+.ptext h2{font-weight:900;font-size:34px;line-height:.98;letter-spacing:-.01em;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.ptext p{margin-top:7px;font-size:10.5px;line-height:1.45;color:#E2E2E2;max-width:300px}
+.contact{position:absolute;left:22px;bottom:18px;font-size:8.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#CFCFCF;z-index:2}
 `;
 
+const agentRow = () => {
+  const a = data.agent;
+  return `<div class="agent"><span class="face" style="background-image:url('${fileUrl(a.headshot)}')"></span>
+    <div><div class="nm">${esc(a.name)}</div><div class="rl">${esc(a.role)}</div><div class="tel">${esc(a.phone)}</div></div></div>`;
+};
+// Filler posts (tip, list, photo) use a simple label instead of the listing ribbon.
+const label = (text) => `<span class="label">${esc(text)}</span>`;
+const logo = () => `<div class="logo"><img src="${fileUrl(data.agent.logo)}" alt="Linda Blue Real Estate"></div>`;
+const page = (slug, body) => `<!doctype html><html><head><meta charset="utf-8"><title>${esc(slug)}</title>${FONTS}<style>${POST_CSS}</style></head><body>${body}</body></html>`;
+
+function tipHtml(p) {
+  if (!Array.isArray(p.points) || !p.points.length || p.points.length > 3) throw new Error(`${p.slug}: a tip needs 1 to 3 points`);
+  const pts = p.points.map((t, i) => `<li><b>${i + 1}</b><span>${esc(t)}</span></li>`).join('');
+  return page(p.slug, `<div class="t card">${label(p.ribbon || 'Tip')}${logo()}
+  <div class="body"><h2>${esc(p.headline)}</h2><div class="bar"></div><ol class="pts">${pts}</ol></div>
+  ${agentRow()}${p.footnote ? `<div class="foot">${esc(p.footnote)}</div>` : ''}</div>`);
+}
+
+function listHtml(p) {
+  if (!Array.isArray(p.rows) || !p.rows.length || p.rows.length > 5) throw new Error(`${p.slug}: a list needs 1 to 5 rows`);
+  const rows = p.rows.map((r) => `<div class="row"><div><div class="a">${esc(r.title)}</div>${r.sub ? `<div class="s">${esc(r.sub)}</div>` : ''}</div>
+    <div class="r">${r.value ? `<div class="p">${esc(r.value)}</div>` : ''}${r.tag ? `<span class="tag ${r.tagStyle === 'outline' ? 'out' : 'red'}">${esc(r.tag)}</span>` : ''}</div></div>`).join('');
+  return page(p.slug, `<div class="t card">${label(p.ribbon || 'Track record')}${logo()}
+  <div class="body list"><h2>${esc(p.headline)}</h2><div class="bar"></div><div class="rows">${rows}</div></div>
+  ${agentRow()}${p.footnote ? `<div class="foot">${esc(p.footnote)}</div>` : ''}</div>`);
+}
+
+function photoHtml(p) {
+  const a = data.agent;
+  return page(p.slug, `<div class="t photo"><img class="ph" src="${fileUrl(p.photo)}" alt="" style="object-position:${esc(p.photoPosition || '50% 50%')}">
+  <div class="shade"></div>${label(p.ribbon || 'Local')}${logo()}
+  <div class="ptext"><h2>${esc(p.headline)}</h2>${p.subtitle ? `<p>${esc(p.subtitle)}</p>` : ''}</div>
+  <div class="contact">${esc(a.name)} &middot; ${esc(a.phone)}</div></div>`);
+}
+
 function postHtml(p) {
+  const type = p.type || 'listing';
+  if (type === 'tip') return tipHtml(p);
+  if (type === 'list') return listHtml(p);
+  if (type === 'photo') return photoHtml(p);
+  if (type !== 'listing') throw new Error(`${p.slug}: unknown type "${type}"`);
   const a = data.agent;
   const s = STATUS[p.status];
   if (!s) throw new Error(`${p.slug}: status must be one of ${Object.keys(STATUS).join(', ')}`);
@@ -156,7 +230,7 @@ async function main() {
   const filter = process.argv[2];
   const posts = data.posts.filter((p) => !filter || p.slug.includes(filter));
   if (!posts.length) throw new Error(`No post slug contains "${filter}"`);
-  for (const p of posts) for (const f of [p.photo, data.agent.headshot, data.agent.logo]) {
+  for (const p of posts) for (const f of [p.photo, data.agent.headshot, data.agent.logo].filter(Boolean)) {
     if (!fs.existsSync(path.join(ROOT, f))) throw new Error(`${p.slug}: missing file ${f}`);
   }
   fs.mkdirSync(OUT, { recursive: true });
