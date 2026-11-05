@@ -1,6 +1,20 @@
 {
   "listings": [
     {
+      "price": "$229,500",
+      "address": "1612 4th Ave SW",
+      "city": "Decatur, AL",
+      "badge": "Just Listed",
+      "status": "For Sale",
+      "specs": [
+        "4 Beds",
+        "2 Baths",
+        "1,850 Sq Ft"
+      ],
+      "photo": "images/1612-4th-ave-sw-1.webp",
+      "alt": "1612 4th Ave SW, Decatur, AL \u2014 full brick front exterior"
+    },
+    {
       "price": "$199,999",
       "address": "1205 Thomas Dr SW",
       "city": "Decatur, AL",

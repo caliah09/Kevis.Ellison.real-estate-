@@ -61,4 +61,4 @@ Divide the price by the square feet and round to a whole dollar. Check the math 
 
 **1612 4th Ave SW, Just listed**
 
-> 1612 4th Ave SW just hit the market in Decatur. Full brick, 4 bed, 2 bath, 1,850 square feet, with a roof replaced in 2024 and HVAC installed in 2020. Inside you'll find LVP flooring, granite countertops, stainless steel appliances and a flexible fourth bedroom with French doors that works great as a rec room. Listed at $229,500. Send me a message and I'll get you in to see it. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS
+> Full brick, a 2024 roof and under $230,000? 1612 4th Ave SW just hit the market in Decatur, 4 bed, 2 bath, 1,850 square feet, with HVAC installed in 2020. Inside: LVP flooring, granite countertops, stainless appliances and a fourth bedroom with French doors that doubles as a rec room. That's the kind of value that moves fast. Send me a message and I'll get you in to see it. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS
