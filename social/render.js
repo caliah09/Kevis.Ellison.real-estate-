@@ -32,6 +32,7 @@ const STATUS = {
   'sold': { ribbon: 'SOLD', big: ['JUST', 'SOLD'] },
   'under-contract': { ribbon: 'UNDER CONTRACT', big: ['UNDER', 'CONTRACT'] },
   'coming-soon': { ribbon: 'COMING SOON', big: ['COMING', 'SOON'] },
+  'just-listed': { ribbon: 'NEW', big: ['JUST', 'LISTED'] },
 };
 
 const FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap">';

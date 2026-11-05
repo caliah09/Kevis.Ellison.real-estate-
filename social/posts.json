@@ -56,6 +56,21 @@
       "date": "2026-11-04"
     },
     {
+      "slug": "just-listed-mls-21933346",
+      "status": "just-listed",
+      "type": "listing",
+      "date": "2026-11-05",
+      "photo": "social/photos/just-listed-mls-21933346.webp",
+      "photoPosition": "40% 50%",
+      "subtitle": "Now on the market",
+      "address": "{Address}",
+      "price": "{Price}",
+      "specs": "4 bd · 2 ba · {sq ft} sq ft",
+      "courtesy": null,
+      "caption": "Full brick with a roof replaced in 2024? {Address} just hit the market in {town}, 4 bed, 2 bath, {sq ft} square feet, listed at {price}. Inside you'll find LVP flooring, granite countertops, stainless steel appliances and a flexible fourth bedroom with French doors that works great as a rec room. The HVAC was installed in 2020, so the big stuff is already handled. Send me a message and I'll get you in to see it.",
+      "extraHashtags": ""
+    },
+    {
       "slug": "meet-kevis-2026-11-06",
       "type": "photo",
       "date": "2026-11-06",
