@@ -20,7 +20,7 @@ Captions follow `../CAPTIONS.md`. Anything in `{curly braces}` needs filling in 
 | Thu, Nov 26 | Thanksgiving: Thankful for you, Decatur. | Ready |
 | Sat, Nov 28 | Small Business Saturday: Shout out a local business | Needs photo |
 | Mon, Nov 30 | Seller Tip: Thinking about selling in 2027? | Ready |
-| Flex | Coming soon: 1612 4th Ave SW | Needs photo |
+| Thu, Nov 5 | Just listed: 1612 4th Ave SW | Ready |
 | Weekly | Reel: One short Reel every week | Needs video |
 
 ## Captions
@@ -115,11 +115,11 @@ Image: `out/tip-2026-11-30-selling-in-2027.png`
 
 > Thinking about selling in 2027? The best time to plan is now. Start with a conversation about what your home could sell for, make a short list of repairs while there's time, and be ready, because many buyers start shopping right after the holidays. Message me and let's make a plan. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS
 
-### Flex: Coming soon, 1612 4th Ave SW
+### Thu, Nov 5: Just listed, 1612 4th Ave SW
 
-Needs: A front photo, plus price, beds and baths if Kevis wants them shown. The Coming Soon design is ready in the template.
+Image: `out/just-listed-1612-4th-ave-sw.png`
 
-> Written once the details are in, in the standard caption style.
+> 1612 4th Ave SW just hit the market in Decatur. Full brick, 4 bed, 2 bath, 1,850 square feet, with a roof replaced in 2024 and HVAC installed in 2020. Inside you'll find LVP flooring, granite countertops, stainless steel appliances and a flexible fourth bedroom with French doors that works great as a rec room. Listed at $229,500. Send me a message and I'll get you in to see it. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS
 
 ### Weekly: Reel, One short Reel every week
 

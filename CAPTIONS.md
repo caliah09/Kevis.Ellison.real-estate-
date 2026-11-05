@@ -27,6 +27,7 @@ Divide the price by the square feet and round to a whole dollar. Check the math 
 |---|---|---|
 | 211 13th Ave NW | $140,000 / 2,153 = $65.03 | $65 a square foot |
 | 306 12th Ave NW | $95,000 / 1,600 = $59.38 | $59 a square foot |
+| 1612 4th Ave SW | $229,500 / 1,850 = $124.05 | $124 a square foot |
 
 ## Before posting
 
@@ -57,3 +58,7 @@ Divide the price by the square feet and round to a whole dollar. Check the math 
 **241 Shortleaf Ln, Under contract (Kevis is the buyer's agent)**
 
 > Nearly an acre in Harvest with its own pond? My buyers said yes. 241 Shortleaf Ln is now under contract, 4 bed, 2 bath, 2,238 square feet on 0.90 acre. That's the kind of space that moves fast. Want first look at the next one? Message me and I'll keep you posted before it hits the market. Listing courtesy of KW Huntsville. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS #HarvestAL
+
+**1612 4th Ave SW, Just listed**
+
+> 1612 4th Ave SW just hit the market in Decatur. Full brick, 4 bed, 2 bath, 1,850 square feet, with a roof replaced in 2024 and HVAC installed in 2020. Inside you'll find LVP flooring, granite countertops, stainless steel appliances and a flexible fourth bedroom with French doors that works great as a rec room. Listed at $229,500. Send me a message and I'll get you in to see it. #DecaturAL #DecaturRealEstate #NorthAlabamaRealEstate #NorthAlabamaHomes #ValleyMLS
