@@ -35,7 +35,7 @@ const STATUS = {
   'just-listed': { ribbon: 'NEW', big: ['JUST', 'LISTED'], red: true },
 };
 
-const FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap">';
+const FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Montserrat:wght@900&family=Yellowtail&display=swap">';
 
 /* ------------------------------------------------------------------ */
 /* The post: full photo, red diagonal ribbon, big status, headshot and */
@@ -60,6 +60,15 @@ body{background:#fff}
 .big{position:absolute;left:0;right:0;top:30px;text-align:center;z-index:2}
 .big .w{font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.01em;font-size:50px;text-shadow:0 2px 16px rgba(0,0,0,.45)}
 .big.two{top:52px}
+/* Optional headline fonts for listing posts (the "bigFont" field). */
+.big.f-anton{top:42px}
+.big.f-anton .w{font-family:'Anton',sans-serif;font-weight:400;font-size:37px;line-height:1.04;letter-spacing:.03em}
+.big.f-anton .sub{margin-top:9px}
+.big.f-montserrat .w{font-family:'Montserrat',sans-serif;font-weight:900;font-size:42px;line-height:.95;letter-spacing:-.01em}
+.big.f-script{top:34px}
+.big.f-script .w{font-family:'Anton',sans-serif;font-weight:400;font-size:42px;line-height:.95;letter-spacing:.02em}
+.big.f-script .w .scr{display:inline-block;font-family:'Yellowtail',cursive;font-size:40px;text-transform:none;letter-spacing:0;line-height:1;margin-bottom:2px;-webkit-text-stroke:1px #fff}
+.big.f-script .sub{margin-top:9px}
 .big.red .w{color:#E01B24;font-weight:900;-webkit-text-stroke:1.2px #fff;paint-order:stroke fill;text-shadow:0 3px 14px rgba(0,0,0,.45)}
 .big.two .w{font-size:38px}
 .big .sub{margin-top:7px;font-size:9px;font-weight:600;letter-spacing:.06em;color:#E2E2E2;text-shadow:0 1px 8px rgba(0,0,0,.5)}
@@ -155,7 +164,7 @@ function postHtml(p) {
   <div class="shade"></div>
   <div class="ribbon ${long ? 'r2' : 'r1'}">${esc(s.ribbon)}</div>
   <div class="logo"><img src="${fileUrl(a.logo)}" alt="Linda Blue Real Estate"></div>
-  <div class="big${long ? ' two' : ''}${s.red ? ' red' : ''}"><div class="w">${esc(s.big[0])}<br>${esc(s.big[1])}</div><div class="sub">${esc(p.subtitle)}</div></div>
+  <div class="big${long ? ' two' : ''}${s.red ? ' red' : ''}${p.bigFont ? ' f-' + esc(p.bigFont) : ''}"><div class="w">${p.bigFont === 'script' ? `<span class="scr">${esc(s.big[0].charAt(0) + s.big[0].slice(1).toLowerCase())}</span>` : esc(s.big[0])}<br>${esc(s.big[1])}</div><div class="sub">${esc(p.subtitle)}</div></div>
   <div class="agent"><span class="face" style="background-image:url('${fileUrl(a.headshot)}')"></span>
     <div><div class="nm">${esc(a.name)}</div><div class="rl">${esc(a.role)}</div><div class="tel">${esc(a.phone)}</div></div></div>
   <div class="rule${p.courtesy ? ' tall' : ''}"></div>

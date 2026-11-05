@@ -23,12 +23,13 @@ Captions follow [`../CAPTIONS.md`](../CAPTIONS.md).
 1. **Add the photo.** Put the front photo in `social/photos/`, or use one that's already in `images/`.
 2. **Add an entry to `posts.json`.** Copy an existing post and change:
    - `slug`: short and unique, used for the file names, like `sold-1612-4th-ave-sw`.
-   - `status`: `sold`, `under-contract` or `coming-soon`. This sets the ribbon and the big lettering.
+   - `status`: `sold`, `under-contract`, `coming-soon` or `just-listed` (Just Listed lettering is red). This sets the ribbon and the big lettering.
    - `photo`: the path from the repo root, like `social/photos/1612-4th-ave-sw.webp`.
    - `photoPosition`: which part of the photo to keep when it's cropped square. `50% 50%` is the center. Lower the second number to show more sky.
    - `subtitle`: the line under the big lettering, like `Another home sold in Decatur, AL`.
    - `address`, `price`, `specs`: shown on the post. Use only verified facts.
    - `courtesy`: for another brokerage's listing, like `Listing courtesy of KW Huntsville`. Otherwise `null`.
+   - `bigFont` (optional): the font for the big status lettering. Leave it out for the standard Archivo, or use `anton` (tall and narrow), `montserrat` (wide and heavy) or `script` (a script first word over a tall second word).
    - `caption` and `extraHashtags`: used in the Instagram preview. The five standard hashtags are added automatically.
    - `date`: the day it goes up, like `2026-11-01`. Keep `posts.json` in date order.
 3. **Render it** (see below), then check both images before sending.
